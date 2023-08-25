@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>1x/baseline_add_black_24dp.png</file>
+    <file>1x/baseline_add_circle_outline_black_24dp.png</file>
+    <file>1x/baseline_cancel_black_24dp.png</file>
+    <file>1x/baseline_check_box_outline_blank_black_24dp.png</file>
+    <file>1x/baseline_check_circle_black_24dp.png</file>
+    <file>1x/baseline_close_black_24dp.png</file>
+    <file>1x/baseline_delete_black_24dp.png</file>
+    <file>1x/baseline_edit_black_24dp.png</file>
+    <file>1x/baseline_maximize_black_24dp.png</file>
+    <file>1x/baseline_person_add_black_24dp.png</file>
+    <file>1x/baseline_point_of_sale_black_24dp.png</file>
+  </qresource>
+</RCC>
