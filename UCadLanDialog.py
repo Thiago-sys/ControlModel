@@ -39,12 +39,14 @@ class CadLanDialog(QDialog, Ui_Dialog):
         self.btnDeleteVendas.clicked.connect(self.deletarvenda)
         self.btnDeleteCompras.clicked.connect(self.deletarcompra)
 
-        self.gridLanVendas.setColumnWidth(0, 50)
+        self.gridLanVendas.horizontalHeader().setMinimumSectionSize(30)
+        self.gridLanVendas.setColumnWidth(0, 58)
         self.gridLanVendas.verticalHeader().setMinimumSectionSize(0)
-        self.gridLanVendas.verticalHeader().setDefaultSectionSize(15)
-        self.gridLanCompras.setColumnWidth(0, 50)
+        self.gridLanVendas.verticalHeader().setDefaultSectionSize(20)
+        self.gridLanVendas.horizontalHeader().setMinimumSectionSize(30)
+        self.gridLanCompras.setColumnWidth(0, 58)
         self.gridLanCompras.verticalHeader().setMinimumSectionSize(0)
-        self.gridLanCompras.verticalHeader().setDefaultSectionSize(15)
+        self.gridLanCompras.verticalHeader().setDefaultSectionSize(20)
 
         self.dteDtaCompras.setDate(date.today())
         self.dteDtaVendas.setDate(date.today())
