@@ -60,7 +60,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
         self.gridLanVendas.setColumnHidden(4, True)  # Ocultando a coluna de Código do Item
         self.gridLanCompras.setColumnHidden(4, True)  # Ocultando a coluna de Código do Item
 
-        self.codigoExcluído = []
+        self.codigoExcluido = []
 
     def gravar(self):
         try:
@@ -88,7 +88,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
                         # Percorrendo a gridLanVendas
                         grid = self.gridLanVendas
                         for row in range(grid.rowCount()):
-                            codItem = int(grid.item(row, 0).text())  # Obtém o código do item da coluna 0
+                            codItem = int(grid.item(row, 4).text())  # Obtém o código do item da coluna 0
                             quantidade = int(grid.item(row, 2).text())  # Obtém a quantidade da coluna 2
                             valor = float(grid.item(row, 3).text())  # Obtém o valor da coluna 3
 
@@ -117,7 +117,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
                         # Percorrendo a gridLanVendas
                         grid = self.gridLanCompras
                         for row in range(grid.rowCount()):
-                            codItem = int(grid.item(row, 0).text())  # Obtém o código do item da coluna 0
+                            codItem = int(grid.item(row, 4).text())  # Obtém o código do item da coluna 0
                             quantidade = int(grid.item(row, 2).text())  # Obtém a quantidade da coluna 2
                             valor = float(grid.item(row, 3).text())  # Obtém o valor da coluna 3
 

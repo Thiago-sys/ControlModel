@@ -155,6 +155,8 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         cadlan = CadLanDialog(self.db, "Insert")
         cadlan.exec_()
 
+        self.buscarlancamentos(self.gridLan)
+
     def editarLan(self, gridLan):
         selected_items = gridLan.selectedItems()
         if selected_items:
