@@ -1,11 +1,15 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
+from UCadLanDialog import CadLanDialog
+from UCustomMessageBox import CustomMessageBox
+from datetime import datetime
 
 
 class SubWindowLancamentos(QtWidgets.QWidget):
-    def __init__(self):
+    def __init__(self, db):
         super().__init__()
-
+        self.db = db
+        
         self.subLan = QtWidgets.QWidget()
         self.subLan.setEnabled(True)
         self.subLan.setStyleSheet("")
@@ -137,5 +141,146 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         self.gridLan.setColumnWidth(11, 300)  # Redimencionando a coluna de Complemento
         self.gridLan.setColumnWidth(12, 200)  # Redimencionando a coluna de Grupo
 
+        self.btnInserirLan.clicked.connect(self.inserirLan)
+        self.btnEditarLan.clicked.connect(lambda event: self.editarLan(self.gridLan))
+        self.btnExcluirLan.clicked.connect(lambda event: self.excluirLan(self.gridLan))
+
+        self.buscarlancamentos(self.gridLan)
+        self.gridLan.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+
     def get(self):
         return self.subLan
+
+    def inserirLan(self):
+        cadlan = CadLanDialog(self.db, "Insert")
+        cadlan.exec_()
+
+    def editarLan(self, gridLan):
+        selected_items = gridLan.selectedItems()
+        if selected_items:
+            selected_row = selected_items[0].row()
+
+            # Obter os dados da linha selecionada
+            data_objeto = datetime.strptime(gridLan.item(selected_row, 1).text(), "%d/%m/%Y")
+            data = data_objeto.strftime("%Y-%m-%d")  # Data do lançamento
+            natureza = gridLan.item(selected_row, 2).text()  # Natureza (Venda ou Compra)
+            codigoCliente = gridLan.item(selected_row, 7).text()  # Código do cliente
+            codigoFornecedor = gridLan.item(selected_row, 9).text() # Código do fornecedor
+            complemento = gridLan.item(selected_row, 11).text()  # Complemento
+            grupo = gridLan.item(selected_row, 12).text()  # Grupo (GRPLAN)
+
+            codigo = self.buscarCodigos(data, grupo)
+
+            cadlan = CadLanDialog(self.db, "Edit", codigo, grupo)
+            cadlan.setWindowTitle("Editar Lançamento")
+            cadlan.dteDtaVendas.setDisabled(True)
+            cadlan.dteDtaCompras.setDisabled(True)
+
+            try:
+                # Abrir a tela CadLanDialog com os dados preenchidos
+                if natureza == 'Venda':
+                    cadlan.tabWidget.setCurrentIndex(0)  # Selecionar a tab de vendas
+                    cadlan.tabWidget.setTabEnabled(1, False)
+
+                    cadlan.dteDtaVendas.setDate(QtCore.QDate.fromString(data, "yyyy-MM-dd"))
+                    cadlan.selecionarClientePorCodigo(codigoCliente)
+                    cadlan.edtCompVendas.setPlainText(complemento)
+
+                    grid = cadlan.gridLanVendas
+
+                    # Consultar os itens do grupo de lançamentos e preencher a grid
+                    query_itens = f"SELECT L.CODLAN, I.DSCITE, L.QTDITE, L.VLRLAN, L.CODITE " \
+                                  f"FROM TBLLAN L LEFT JOIN TBLITE I ON L.CODITE = I.CODITE WHERE GRPLAN = {grupo}"
+                    data_itens = self.db.fetch_data(query_itens)
+
+                    grid.setRowCount(len(data_itens))
+                    for row_num, row_data in enumerate(data_itens):
+                        for col_num, value in enumerate(row_data):
+                            grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
+
+                    cadlan.calcularSaldoTotal(grid, cadlan.dblValorTotVendas)
+                    cadlan.exec_()
+                elif natureza == 'Compra':
+                    cadlan.tabWidget.setCurrentIndex(1)  # Selecionar a tab de compras # Selecionar a tab de vendas
+                    cadlan.tabWidget.setTabEnabled(0, False)
+
+                    cadlan.dteDtaCompras.setDate(QtCore.QDate.fromString(data, "yyyy-MM-dd"))
+                    cadlan.selecionarFornecedorPorCodigo(codigoFornecedor)
+                    cadlan.edtCompCompras.setPlainText(complemento)
+
+                    grid = cadlan.gridLanCompras
+
+                    # Consultar os itens do grupo de lançamentos e preencher a grid
+                    query_itens = f"SELECT L.CODLAN, I.DSCITE, L.QTDITE, L.VLRLAN, L.CODITE " \
+                                  f"FROM TBLLAN L LEFT JOIN TBLITE I ON L.CODITE = I.CODITE WHERE GRPLAN = {grupo}"
+                    data_itens = self.db.fetch_data(query_itens)
+
+                    grid.setRowCount(len(data_itens))
+                    for row_num, row_data in enumerate(data_itens):
+                        for col_num, value in enumerate(row_data):
+                            grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
+
+                    cadlan.calcularSaldoTotal(grid, cadlan.dblValorTotVendas)
+                    cadlan.exec_()
+            except Exception as e:
+                self.db.connection.rollback()  # Desfaz as alterações em caso de erro
+                QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao buscar os lançamentos: {str(e)}")
+
+        self.buscarlancamentos(self.gridLan)
+
+    def excluirLan(self, gridLan):
+        try:
+            selected_items = gridLan.selectedItems()
+
+            if selected_items:
+                selected_row = selected_items[0].row()
+
+                MessageBox = CustomMessageBox("Confirmar Exclusão", "Deseja excluir esse grupo de lançamento? \n"
+                                              "Ao realizar essa ação todos os lançamentos do grupo serão excluídos")
+                confirmation = MessageBox.confirmation
+                result = confirmation.exec_()
+
+                if result == QtWidgets.QMessageBox.Yes:
+                    codigo = int(gridLan.item(selected_row, 12).text())
+
+                    delete_query = f"DELETE FROM TBLLAN L WHERE L.GRPLAN = {codigo}"
+                    self.db.execute_query(delete_query)
+
+                    self.buscarlancamentos(gridLan)
+        except Exception as e:
+            self.db.connection.rollback()  # Desfaz as alterações em caso de erro
+            QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao excluir os lançamento(s): {str(e)}")
+
+    def buscarlancamentos(self, gridLan):
+        # Consulta à tabela TBLLAN usando a classe DatabaseManager
+        query = "SELECT L.CODLAN, L.DTALAN, IF(L.NATLAN = 'V', 'Venda', 'Compra') AS NATUREZA, L.VLRLAN, L.CODITE, " \
+                "I.DSCITE, L.QTDITE, L.CODCLI, C.DSCCLI, L.CODFOR, F.DSCFOR, L.COMLAN, L.GRPLAN                    " \
+                "FROM TBLLAN L LEFT JOIN TBLITE I ON L.CODITE = I.CODITE                                           " \
+                "              LEFT JOIN TBLCLI C ON L.CODCLI = C.CODCLI                                           " \
+                "              LEFT JOIN TBLFOR F ON L.CODFOR = F.CODFOR                                           "
+        data = self.db.fetch_data(query)
+
+        # Preencher a gridLan com os dados recuperados
+        gridLan.setRowCount(len(data))
+        for row_num, row_data in enumerate(data):
+            for col_num, value in enumerate(row_data):
+                if str(value) == 'None':
+                    gridLan.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
+                else:
+                    if col_num == 1:
+                        data_objeto = datetime.strptime(str(value), "%Y-%m-%d")
+                        data_formatada = data_objeto.strftime("%d/%m/%Y")
+                        gridLan.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(data_formatada))
+                    elif col_num == 3:
+                        gridLan.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(
+                            'R$ {:,.2f}'.format(value).replace(',', '.').replace('.', ',')))
+                    else:
+                        gridLan.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
+
+    def buscarCodigos(self, data, grupo):
+        query = "SELECT L.CODLAN FROM TBLLAN L WHERE L.DTALAN = %s AND L.GRPLAN = %s"
+        cods = self.db.fetch_data(query, (data, grupo))
+
+        cods_list = [cod[0] for cod in cods]
+        return cods_list
+
