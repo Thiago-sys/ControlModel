@@ -219,7 +219,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
                     cadMovEst.dteDataEntrada.setDate(QtCore.QDate.fromString(data, "yyyy-MM-dd"))
                     cadMovEst.selecionarFornecedorPorCodigo(codigoFornecedor)
                     cadMovEst.edtQntdEntrada.setText(qntd)
-                    cadMovEst.selecionarItemPorCodigo(codItem)
+                    cadMovEst.selecionarItemPorCodigo(codItem, 'C')
 
                     cadMovEst.exec_()
                 elif natureza == 'Saída':
@@ -229,14 +229,14 @@ class SubWindowEstoque(QtWidgets.QWidget):
                     cadMovEst.dteDataEntrada.setDate(QtCore.QDate.fromString(data, "yyyy-MM-dd"))
                     cadMovEst.selecionarClientePorCodigo(codigoCliente)
                     cadMovEst.edtQntdEntrada.setText(qntd)
-                    cadMovEst.selecionarItemPorCodigo(codItem)
+                    cadMovEst.selecionarItemPorCodigo(codItem, 'V')
 
                     cadMovEst.exec_()
             except Exception as e:
                 self.db.connection.rollback()  # Desfaz as alterações em caso de erro
                 QtWidgets.QMessageBox.critical(self, "Erro", f"Erro: {str(e)}")
 
-        self.buscarlancamentos(self.gridLan)
+        self.buscarDados()
 
     def excluirMovEst(self, gridMovEst):
         try:

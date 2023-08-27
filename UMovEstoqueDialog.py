@@ -12,11 +12,16 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
         self.state = state
         self.codigo = codigo
 
+        self.btnGravar.clicked.connect()
+        self.btnCancelar.clicked.connect()
+
         self.ClienteIndexMap = {}
         self.FornecedorIndexMap = {}
+        self.itemIndexMap = {}
 
         self.buscarClientes()
         self.buscarFornecedores()
+        self.buscarItens()
 
     def buscarClientes(self):
         query = "SELECT C.CODCLI, C.DSCCLI FROM TBLCLI C"
@@ -59,3 +64,37 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
             if self.FornecedorIndexMap.get(self.cbxFornecedor.itemText(index)) == codigo_fornecedor:
                 self.cbxFornecedor.setCurrentIndex(index)
                 break
+
+    def buscarItens(self):
+        query = "SELECT I.CODITE, I.DSCITE FROM TBLITE I"
+        data = self.db.fetch_data(query)
+
+        for index, row in enumerate(data):
+            item = str(row[1])
+            self.cbxItemSaida.addItem(item)
+            self.cbxItemEntrada.addItem(item)
+            self.itemIndexMap[item] = int(row[0])
+
+    def obterCodItemSelecionado(self, nat):
+        if nat == 'V':
+            item_selecionado = self.cbxItemSaida.currentText()
+            if item_selecionado in self.itemIndexMap:
+                return self.itemIndexMap[item_selecionado]
+            return None
+        else:
+            item_selecionado = self.cbxItemEntrada.currentText()
+            if item_selecionado in self.itemIndexMap:
+                return self.itemIndexMap[item_selecionado]
+            return None
+
+    def selecionarItemPorCodigo(self, codigo_item, nat):
+        if nat == 'V':
+            for index in range(self.cbxItemSaida.count()):
+                if self.itemIndexMap.get(self.cbxItemSaida.itemText(index)) == codigo_item:
+                    self.cbxItemSaida.setCurrentIndex(index)
+                    break
+        else:
+            for index in range(self.cbxItemEntrada.count()):
+                if self.itemIndexMap.get(self.cbxItemEntrada.itemText(index)) == codigo_item:
+                    self.cbxItemEntrada.setCurrentIndex(index)
+                    break
