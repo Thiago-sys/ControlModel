@@ -538,6 +538,11 @@ border: none;</string>
              </column>
              <column>
               <property name="text">
+               <string>CODITE</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
                <string>Item</string>
               </property>
              </column>
@@ -548,12 +553,27 @@ border: none;</string>
              </column>
              <column>
               <property name="text">
+               <string>CODCLI</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
                <string>Cliente</string>
               </property>
              </column>
              <column>
               <property name="text">
+               <string>CODFOR</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
                <string>Fornecedor</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Complemento</string>
               </property>
              </column>
             </widget>
@@ -609,6 +629,11 @@ border: none;</string>
              <column>
               <property name="text">
                <string>Código</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>CODITE</string>
               </property>
              </column>
              <column>

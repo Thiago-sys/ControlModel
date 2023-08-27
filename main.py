@@ -66,7 +66,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def mostrarSubEstoque(self):
         self.fecharSubWindow()
-        subEst = SubWindowEstoque()
+        subEst = SubWindowEstoque(self.database_manager)
         sub_window_estoque = subEst.get()
         subEst.btnFecharEst.clicked.connect(self.fecharSubWindow)
         self.mdiArea.addSubWindow(sub_window_estoque)
