@@ -361,7 +361,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/insert.png</normaloff>:/icons/2x/insert.png</iconset>
              </property>
              <property name="iconSize">
@@ -388,7 +388,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/edit.png</normaloff>:/icons/2x/edit.png</iconset>
              </property>
              <property name="iconSize">
@@ -415,7 +415,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/delete.png</normaloff>:/icons/2x/delete.png</iconset>
              </property>
              <property name="iconSize">
@@ -461,7 +461,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/close.png</normaloff>:/icons/2x/close.png</iconset>
              </property>
              <property name="iconSize">
@@ -481,30 +481,152 @@ border: none;</string>
        <property name="windowTitle">
         <string>Estoque</string>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <item>
-         <widget class="QTableWidget" name="gridEst">
-          <attribute name="horizontalHeaderMinimumSectionSize">
-           <number>50</number>
-          </attribute>
-          <column>
-           <property name="text">
-            <string>Código</string>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QFrame" name="fraMovEst">
+          <property name="frameShape">
+           <enum>QFrame::Panel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="spacing">
+            <number>4</number>
            </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Item</string>
+           <property name="leftMargin">
+            <number>4</number>
            </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Quantidade</string>
+           <property name="topMargin">
+            <number>4</number>
            </property>
-          </column>
+           <property name="rightMargin">
+            <number>4</number>
+           </property>
+           <property name="bottomMargin">
+            <number>4</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lblMovEst">
+             <property name="text">
+              <string>Movimentação de estoque</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="gridMovEst">
+             <attribute name="horizontalHeaderMinimumSectionSize">
+              <number>50</number>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>Código</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Data</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Natureza</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Item</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Quantidade</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Cliente</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Fornecedor</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
-        <item>
+        <item row="0" column="1">
+         <widget class="QFrame" name="fraEst">
+          <property name="minimumSize">
+           <size>
+            <width>315</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>315</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Panel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <property name="leftMargin">
+            <number>4</number>
+           </property>
+           <property name="topMargin">
+            <number>4</number>
+           </property>
+           <property name="rightMargin">
+            <number>4</number>
+           </property>
+           <property name="bottomMargin">
+            <number>4</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lblEst">
+             <property name="text">
+              <string>Estoque</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="gridEst">
+             <column>
+              <property name="text">
+               <string>Código</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Item</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Quantidade</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
          <widget class="QFrame" name="fraBotoesEst">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -535,7 +657,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/insert.png</normaloff>:/icons/2x/insert.png</iconset>
              </property>
              <property name="iconSize">
@@ -562,7 +684,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/edit.png</normaloff>:/icons/2x/edit.png</iconset>
              </property>
              <property name="iconSize">
@@ -589,7 +711,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/delete.png</normaloff>:/icons/2x/delete.png</iconset>
              </property>
              <property name="iconSize">
@@ -635,7 +757,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/close.png</normaloff>:/icons/2x/close.png</iconset>
              </property>
              <property name="iconSize">
@@ -727,7 +849,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/insert.png</normaloff>:/icons/2x/insert.png</iconset>
              </property>
              <property name="iconSize">
@@ -754,7 +876,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/edit.png</normaloff>:/icons/2x/edit.png</iconset>
              </property>
              <property name="iconSize">
@@ -781,7 +903,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/delete.png</normaloff>:/icons/2x/delete.png</iconset>
              </property>
              <property name="iconSize">
@@ -827,7 +949,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/close.png</normaloff>:/icons/2x/close.png</iconset>
              </property>
              <property name="iconSize">
@@ -902,7 +1024,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/insert.png</normaloff>:/icons/2x/insert.png</iconset>
              </property>
              <property name="iconSize">
@@ -929,7 +1051,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/edit.png</normaloff>:/icons/2x/edit.png</iconset>
              </property>
              <property name="iconSize">
@@ -956,7 +1078,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/delete.png</normaloff>:/icons/2x/delete.png</iconset>
              </property>
              <property name="iconSize">
@@ -1002,7 +1124,7 @@ border: none;</string>
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="icons/2_.qrc">
+              <iconset resource="../icons/2_.qrc">
                <normaloff>:/icons/2x/close.png</normaloff>:/icons/2x/close.png</iconset>
              </property>
              <property name="iconSize">
@@ -1025,9 +1147,9 @@ border: none;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="icons/2_.qrc"/>
-  <include location="icons/0.5x_.qrc"/>
-  <include location="icons/1x_.qrc"/>
+  <include location="../icons/2_.qrc"/>
+  <include location="../icons/0.5x_.qrc"/>
+  <include location="../icons/1x_.qrc"/>
  </resources>
  <connections/>
 </ui>
