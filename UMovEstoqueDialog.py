@@ -45,7 +45,7 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
                         qntd = self.edtQntdEntrada.text()
 
                         # Preparar o SQL para inserção de uma movimentação
-                        insert_query = "INSERT INTO TBLMOVEST (DTALAN, NATLAN, CODITE, QTD, CODFOR, COMLAN) " \
+                        insert_query = "INSERT INTO TBLMOVEST (DTAMOV, NATMOV, CODITE, QTD, CODFOR, COMMOV) " \
                                        "               VALUES (%s, %s, %s, %s, %s, %s)"
 
                         values = (data, natureza, codItem, qntd, codFornecedor, complemento)
@@ -67,7 +67,7 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
                         qntd = self.edtQntdEntrada.text()
 
                         # Preparar a consulta SQL para inserção de um lançamento
-                        insert_query = "INSERT INTO TBLMOVEST (DTALAN, NATLAN, CODITE, QTD, CODCLI, COMLAN) " \
+                        insert_query = "INSERT INTO TBLMOVEST (DTAMOV, NATMOV, CODITE, QTD, CODCLI, COMMOV) " \
                                        "               VALUES (%s, %s, %s, %s, %s, %s)"
 
                         # Preparar os valores para a inserção na TBLLAN
@@ -85,9 +85,8 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
                     self.db.connection.rollback()
                 self.db.connection.start_transaction()
 
-                confirmation = CustomMessageBox("Confirmar Gravação",
-                                                "Deseja realmente gravar essa movimentação?").confirmation
-                result = confirmation.exec_()
+                result = CustomMessageBox("Confirmar Gravação",
+                                          "Deseja realmente gravar essa movimentação?").confirmation.exec_()
                 if result == QtWidgets.QMessageBox.Yes:
 
                     if self.tabWidget.currentIndex() == 0:
@@ -100,8 +99,8 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
                         qntd = self.edtQntdEntrada.text()
 
                         # Preparar a consulta SQL para inserção de um lançamento
-                        update_query = "UPDATE TBLMOVEST SET NATLAN = %s, CODITE = %s, QTDITE = %s, CODFOR = %s, " \
-                                       "COMLAN = %s WHERE CODMOVEST = %s AND DTAMOV = %s"
+                        update_query = "UPDATE TBLMOVEST SET NATMOV = %s, CODITE = %s, QTD = %s, CODFOR = %s, " \
+                                       "COMMOV = %s WHERE CODMOVEST = %s AND DTAMOV = %s"
 
                         # Preparar os valores para a inserção na TBLLAN
                         values = (natureza, codItem, qntd, codFornecedor, complemento, self.codigo, data)
@@ -110,7 +109,7 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
-                        QtWidgets.QMessageBox.information(self, "Sucesso", "Movimentação gravada com sucesso.")
+                        CustomMessageBox("Sucesso", "Movimentação gravada com sucesso.").information.exec_()
                         self.accept()
                     else:
                         # Coletar dados da interface do usuário
@@ -122,8 +121,8 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
                         qntd = self.edtQntdSaida.text()
 
                         # Preparar a consulta SQL para inserção de um lançamento
-                        update_query = "UPDATE TBLMOVEST SET NATLAN = %s, CODITE = %s, QTDITE = %s, CODCLI = %s, " \
-                                       "COMLAN = %s WHERE CODMOVEST = %s AND DTAMOV = %s"
+                        update_query = "UPDATE TBLMOVEST SET NATMOV = %s, CODITE = %s, QTD = %s, CODCLI = %s, " \
+                                       "COMMOV = %s WHERE CODMOVEST = %s AND DTAMOV = %s"
 
                         # Preparar os valores para a inserção na TBLLAN
                         values = (natureza, codItem, qntd, codCliente, complemento, self.codigo, data)
@@ -132,7 +131,7 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
-                        QtWidgets.QMessageBox.information(self, "Sucesso", "Movimentação gravada com sucesso.")
+                        CustomMessageBox("Sucesso", "Movimentação gravada com sucesso.").information.exec_()
                         self.accept()
 
         except Exception as e:

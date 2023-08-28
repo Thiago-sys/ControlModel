@@ -174,6 +174,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.gridMovEst.setColumnWidth(9, 200)  # Redimencionando a coluna de Fornecedor
         self.gridMovEst.setColumnWidth(10, 300)  # Redimencionando a coluna de Fornecedor
 
+        self.gridEst.setColumnWidth(0, 60) # Diminuindo o tamanho do campo de código na tabela de estoque
         self.gridEst.setColumnHidden(1, True) # Ocultando a coluna de código do item
 
         self.btnInserirEst.clicked.connect(self.inserirMovEst)
@@ -204,6 +205,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
             qntd = gridMovEst.item(selected_row, 5).text() # Quantidade
             codigoCliente = gridMovEst.item(selected_row, 6).text()  # Código do cliente
             codigoFornecedor = gridMovEst.item(selected_row, 8).text() # Código do fornecedor
+            complemento = gridMovEst.item(selected_row, 10).text()
 
             cadMovEst = MovEstoqueDialog(self.db, "Edit", codigo)
             cadMovEst.setWindowTitle("Editar movimentação de estoque")
@@ -220,6 +222,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
                     cadMovEst.selecionarFornecedorPorCodigo(codigoFornecedor)
                     cadMovEst.edtQntdEntrada.setText(qntd)
                     cadMovEst.selecionarItemPorCodigo(codItem, 'C')
+                    cadMovEst.edtCompEntrada.setText(complemento)
 
                     cadMovEst.exec_()
                 elif natureza == 'Saída':
@@ -230,6 +233,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
                     cadMovEst.selecionarClientePorCodigo(codigoCliente)
                     cadMovEst.edtQntdEntrada.setText(qntd)
                     cadMovEst.selecionarItemPorCodigo(codItem, 'V')
+                    cadMovEst.edtCompSaida.setText(complemento)
 
                     cadMovEst.exec_()
             except Exception as e:
@@ -253,7 +257,9 @@ class SubWindowEstoque(QtWidgets.QWidget):
                     delete_query = f"DELETE FROM TBLMOVEST M WHERE M.CODMOVEST = {codigo}"
                     self.db.execute_query(delete_query)
 
-                    self.buscarlancamentos(gridMovEst)
+                    CustomMessageBox("Sucesso", "Movimentação excluída com sucesso.").information.exec_()
+
+                    self.buscarDados()
         except Exception as e:
             self.db.connection.rollback()  # Desfaz as alterações em caso de erro
             QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao excluir a movimentação: {str(e)}")
