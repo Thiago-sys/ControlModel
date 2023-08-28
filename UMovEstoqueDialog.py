@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import QDialog
+from PyQt5 import QtWidgets
 from Modelos.MovEstoque import Ui_Dialog
 from UDataBaseManager import DatabaseManager
+from UCustomMessageBox import CustomMessageBox
 
 
 class MovEstoqueDialog(QDialog, Ui_Dialog):
@@ -12,8 +14,8 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
         self.state = state
         self.codigo = codigo
 
-        self.btnGravar.clicked.connect()
-        self.btnCancelar.clicked.connect()
+        self.btnGravar.clicked.connect(self.gravar)
+        self.btnCancelar.clicked.connect(self.cancelar)
 
         self.ClienteIndexMap = {}
         self.FornecedorIndexMap = {}
@@ -22,6 +24,125 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
         self.buscarClientes()
         self.buscarFornecedores()
         self.buscarItens()
+
+    def gravar(self):
+        try:
+            if self.state == 'Insert':
+                if self.db.connection.in_transaction:
+                    self.db.connection.rollback()
+                self.db.connection.start_transaction()
+
+                confirmation = CustomMessageBox("Confirmar Gravação",
+                                                "Deseja realmente gravar essa movimentação?").confirmation
+                result = confirmation.exec_()
+                if result == QtWidgets.QMessageBox.Yes:
+                    if self.tabWidget.currentIndex() == 0: # Entrada
+                        # Coletar dados da interface do usuário
+                        data = self.dteDataEntrada.date().toPyDate()
+                        natureza = 'C'
+                        codFornecedor = int(self.obterCodFornecedorSelecionado())
+                        complemento = self.edtCompEntrada.toPlainText()
+                        codItem = self.obterCodItemSelecionado('C')
+                        qntd = self.edtQntdEntrada.text()
+
+                        # Preparar o SQL para inserção de uma movimentação
+                        insert_query = "INSERT INTO TBLMOVEST (DTALAN, NATLAN, CODITE, QTD, CODFOR, COMLAN) " \
+                                       "               VALUES (%s, %s, %s, %s, %s, %s)"
+
+                        values = (data, natureza, codItem, qntd, codFornecedor, complemento)
+
+                        # Executar a consulta SQL de inserção
+                        self.db.execute_query(insert_query, values)
+
+                        self.db.connection.commit()
+                        # Exibir mensagem de sucesso
+                        QtWidgets.QMessageBox.information(self, "Sucesso", "Movimentação gravada com sucesso.")
+                        self.accept()
+                    else:
+                        # Coletar dados da interface do usuário
+                        data = self.dteDataSaida.date().toPyDate()
+                        natureza = 'V'
+                        codCliente = int(self.obterCodClienteSelecionado())
+                        complemento = self.edtCompSaida.toPlainText()
+                        codItem = self.obterCodItemSelecionado('V')
+                        qntd = self.edtQntdEntrada.text()
+
+                        # Preparar a consulta SQL para inserção de um lançamento
+                        insert_query = "INSERT INTO TBLMOVEST (DTALAN, NATLAN, CODITE, QTD, CODCLI, COMLAN) " \
+                                       "               VALUES (%s, %s, %s, %s, %s, %s)"
+
+                        # Preparar os valores para a inserção na TBLLAN
+                        values = (data, natureza, codItem, qntd, codCliente, complemento)
+
+                        # Executar a consulta SQL de inserção
+                        self.db.execute_query(insert_query, values)
+
+                        self.db.connection.commit()
+                        # Exibir mensagem de sucesso
+                        QtWidgets.QMessageBox.information(self, "Sucesso", "Movimentação gravada com sucesso.")
+                        self.accept()
+            else:
+                if self.db.connection.in_transaction:
+                    self.db.connection.rollback()
+                self.db.connection.start_transaction()
+
+                confirmation = CustomMessageBox("Confirmar Gravação",
+                                                "Deseja realmente gravar essa movimentação?").confirmation
+                result = confirmation.exec_()
+                if result == QtWidgets.QMessageBox.Yes:
+
+                    if self.tabWidget.currentIndex() == 0:
+                        # Coletar dados da interface do usuário
+                        data = self.dteDataEntrada.date().toPyDate()
+                        natureza = 'C'
+                        codFornecedor = int(self.obterCodFornecedorSelecionado())
+                        complemento = self.edtCompEntrada.toPlainText()
+                        codItem = self.obterCodItemSelecionado('C')
+                        qntd = self.edtQntdEntrada.text()
+
+                        # Preparar a consulta SQL para inserção de um lançamento
+                        update_query = "UPDATE TBLMOVEST SET NATLAN = %s, CODITE = %s, QTDITE = %s, CODFOR = %s, " \
+                                       "COMLAN = %s WHERE CODMOVEST = %s AND DTAMOV = %s"
+
+                        # Preparar os valores para a inserção na TBLLAN
+                        values = (natureza, codItem, qntd, codFornecedor, complemento, self.codigo, data)
+
+                        self.db.execute_query(update_query, values)
+
+                        self.db.connection.commit()
+                        # Exibir mensagem de sucesso
+                        QtWidgets.QMessageBox.information(self, "Sucesso", "Movimentação gravada com sucesso.")
+                        self.accept()
+                    else:
+                        # Coletar dados da interface do usuário
+                        data = self.dteDataSaida.date().toPyDate()
+                        natureza = 'V'
+                        codCliente = int(self.obterCodClienteSelecionado())
+                        complemento = self.edtCompSaida.toPlainText()
+                        codItem = self.obterCodItemSelecionado('V')
+                        qntd = self.edtQntdSaida.text()
+
+                        # Preparar a consulta SQL para inserção de um lançamento
+                        update_query = "UPDATE TBLMOVEST SET NATLAN = %s, CODITE = %s, QTDITE = %s, CODCLI = %s, " \
+                                       "COMLAN = %s WHERE CODMOVEST = %s AND DTAMOV = %s"
+
+                        # Preparar os valores para a inserção na TBLLAN
+                        values = (natureza, codItem, qntd, codCliente, complemento, self.codigo, data)
+
+                        self.db.execute_query(update_query, values)
+
+                        self.db.connection.commit()
+                        # Exibir mensagem de sucesso
+                        QtWidgets.QMessageBox.information(self, "Sucesso", "Movimentação gravada com sucesso.")
+                        self.accept()
+
+        except Exception as e:
+            self.db.connection.rollback()  # Desfaz as alterações em caso de erro
+            QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao gravar lançamento(s): {str(e)}")
+            self.reject()
+
+    def cancelar(self):
+        self.reject()
 
     def buscarClientes(self):
         query = "SELECT C.CODCLI, C.DSCCLI FROM TBLCLI C"

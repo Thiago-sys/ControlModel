@@ -96,7 +96,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
                             values = (data, natureza, valor, codCliente, codItem, quantidade, complemento, grupo)
 
                             # Executar a consulta SQL de inserção
-                            self.db.insert_data(insert_query, values)
+                            self.db.execute_query(insert_query, values)
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
@@ -125,7 +125,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
                             values = (data, natureza, valor, codFornecedor, codItem, quantidade, complemento, grupo)
 
                             # Executar a consulta SQL de inserção
-                            self.db.insert_data(insert_query, values)
+                            self.db.execute_query(insert_query, values)
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
@@ -164,7 +164,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
                                 values = (natureza, valor, codCliente, codItem, quantidade, complemento, self.codigoLancamento[row], data)
 
                                 # Executar a consulta SQL de inserção
-                                self.db.insert_data(update_query, values)
+                                self.db.execute_query(update_query, values)
                             else:
                                 # Preparar a consulta SQL para inserção de um lançamento
                                 insert_query = "INSERT INTO TBLLAN (DTALAN, NATLAN, VLRLAN, CODCLI, CODITE, QTDITE, COMLAN, GRPLAN) " \
@@ -172,7 +172,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
 
                                 values = (data, natureza, valor, codCliente, codItem, quantidade, complemento, self.grupo)
 
-                                self.db.insert_data(insert_query, values)
+                                self.db.execute_query(insert_query, values)
 
                         if len(self.codigoExcluído) > 0:
                             for i in self.codigoExcluído:
@@ -208,7 +208,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
                                 values = (natureza, valor, codFornecedor, codItem, quantidade, complemento, self.codigoLancamento[row], data)
 
                                 # Executar a consulta SQL de inserção
-                                self.db.insert_data(update_query, values)
+                                self.db.execute_query(update_query, values)
                             else:
                                 # Preparar a consulta SQL para inserção de um lançamento
                                 insert_query = "INSERT INTO TBLLAN (DTALAN, NATLAN, VLRLAN, CODFOR, CODITE, QTDITE, COMLAN, GRPLAN) " \
@@ -216,7 +216,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
 
                                 values = (data, natureza, valor, codFornecedor, codItem, quantidade, complemento, self.grupo)
 
-                                self.db.insert_data(insert_query, values)
+                                self.db.execute_query(insert_query, values)
 
                         if len(self.codigoExcluído) > 0:
                             for i in self.codigoExcluído:

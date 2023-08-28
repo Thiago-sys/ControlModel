@@ -178,7 +178,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
 
         self.btnInserirEst.clicked.connect(self.inserirMovEst)
         self.btnEditarEst.clicked.connect(lambda event: self.editarMovEst(self.gridMovEst))
-        self.btnExcluirEst.clicked.connect(lambda event: self.excluirMovLan(self.gridMovEst))
+        self.btnExcluirEst.clicked.connect(lambda event: self.excluirMovEst(self.gridMovEst))
 
         self.buscarDados()
         self.gridMovEst.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)

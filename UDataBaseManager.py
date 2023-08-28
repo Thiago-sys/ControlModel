@@ -10,8 +10,8 @@ class DatabaseManager:
         )
         self.cursor = self.connection.cursor()
 
-    def execute_query(self, query):
-        self.cursor.execute(query)
+    def execute_query(self, query, values=None):
+        self.cursor.execute(query, values)
         self.connection.commit()
 
     def fetch_data(self, query, values=None):
@@ -21,7 +21,3 @@ class DatabaseManager:
     def close(self):
         self.cursor.close()
         self.connection.close()
-
-    def insert_data(self, query, values):
-        self.cursor.execute(query, values)
-        self.connection.commit()
