@@ -18,3 +18,10 @@ class CustomMessageBox():
         self.error.setWindowTitle(Title)
         self.error.setText(Message)
         self.error.setStandardButtons(QtWidgets.QMessageBox.Ok)
+
+        self.information = QtWidgets.QMessageBox()
+        self.information.setIcon(QtWidgets.QMessageBox.Information)
+        self.information.setWindowTitle(Title)
+        self.information.setText(Message)
+        self.information.setStandardButtons(QtWidgets.QMessageBox.Ok)
+

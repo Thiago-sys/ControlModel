@@ -44,9 +44,7 @@ class PartidaDialog(QDialog, Ui_Dialog):
             self.grid.setItem(row_count, 3, QtWidgets.QTableWidgetItem(str(valor)))
             self.grid.setItem(row_count, 4, QtWidgets.QTableWidgetItem(str(item_selecionado)))
 
-            MessageBox = CustomMessageBox("Pergunta", "Deseja inserir uma nova partida?")
-            confirmation = MessageBox.confirmation
-            result = confirmation.exec_()
+            result = CustomMessageBox("Pergunta", "Deseja inserir uma nova partida?").confirmation.exec_()
 
             if result == QtWidgets.QMessageBox.No:
                 self.accept()

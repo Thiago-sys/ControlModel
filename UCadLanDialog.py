@@ -69,9 +69,8 @@ class CadLanDialog(QDialog, Ui_Dialog):
                     self.db.connection.rollback()
                 self.db.connection.start_transaction()
 
-                confirmation = CustomMessageBox("Confirmar Gravação",
-                                                "Deseja realmente gravar este lançamento?").confirmation
-                result = confirmation.exec_()
+                result = CustomMessageBox("Confirmar Gravação",
+                                          "Deseja realmente gravar este lançamento?").confirmation.exec_()
                 if result == QtWidgets.QMessageBox.Yes:
                     if self.tabWidget.currentIndex() == 0:
                         # Coletar dados da interface do usuário
@@ -100,7 +99,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
-                        QtWidgets.QMessageBox.information(self, "Sucesso", "Lançamento(s) gravado(s) com sucesso.")
+                        CustomMessageBox("Sucesso", "Lançamento(s) gravado(s) com sucesso.").information.exec_()
                         self.accept()
                     else:
                         # Coletar dados da interface do usuário
@@ -129,16 +128,15 @@ class CadLanDialog(QDialog, Ui_Dialog):
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
-                        QtWidgets.QMessageBox.information(self, "Sucesso", "Lançamento(s) gravado(s) com sucesso.")
+                        CustomMessageBox("Sucesso", "Lançamento(s) gravado(s) com sucesso.").information.exec_()
                         self.accept()
             else:
                 if self.db.connection.in_transaction:
                     self.db.connection.rollback()
                 self.db.connection.start_transaction()
 
-                confirmation = CustomMessageBox("Confirmar Gravação",
-                                                "Deseja realmente gravar este lançamento?").confirmation
-                result = confirmation.exec_()
+                result = CustomMessageBox("Confirmar Gravação",
+                                          "Deseja realmente gravar este lançamento?").confirmation.exec_()
                 if result == QtWidgets.QMessageBox.Yes:
 
                     if self.tabWidget.currentIndex() == 0:
@@ -181,7 +179,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
-                        QtWidgets.QMessageBox.information(self, "Sucesso", "Lançamento(s) gravado(s) com sucesso.")
+                        CustomMessageBox("Sucesso", "Lançamento(s) gravado(s) com sucesso.").information.exec_()
                         self.accept()
 
                     else:
@@ -225,7 +223,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
-                        QtWidgets.QMessageBox.information(self, "Sucesso", "Lançamento(s) gravado(s) com sucesso.")
+                        CustomMessageBox("Sucesso", "Lançamento(s) gravado(s) com sucesso.").information.exec_()
                         self.accept()
 
         except Exception as e:
@@ -296,9 +294,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
         if selected_items:
             selected_row = selected_items[0].row()
 
-            MessageBox = CustomMessageBox("Confirmar Exclusão", "Deseja realmente excluir esta partida?")
-            confirmation = MessageBox.confirmation
-            result = confirmation.exec_()
+            result = CustomMessageBox("Confirmar Exclusão", "Deseja realmente excluir esta partida?").confirmation.exec_()
 
             if result == QtWidgets.QMessageBox.Yes:
                 self.codigoExcluído.append(int(self.gridLanVendas.item(selected_row, 0).text()))
@@ -311,9 +307,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
         if selected_items:
             selected_row = selected_items[0].row()
 
-            MessageBox = CustomMessageBox("Confirmar Exclusão", "Deseja realmente excluir esta partida?")
-            confirmation = MessageBox.confirmation
-            result = confirmation.exec_()
+            result = CustomMessageBox("Confirmar Exclusão", "Deseja realmente excluir esta partida?").confirmation.exec_()
 
             if result == QtWidgets.QMessageBox.Yes:
                 self.codigoExcluído.append(int(self.gridLanCompras.item(selected_row, 0).text()))

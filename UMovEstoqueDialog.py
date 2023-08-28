@@ -32,9 +32,8 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
                     self.db.connection.rollback()
                 self.db.connection.start_transaction()
 
-                confirmation = CustomMessageBox("Confirmar Gravação",
-                                                "Deseja realmente gravar essa movimentação?").confirmation
-                result = confirmation.exec_()
+                result = CustomMessageBox("Confirmar Gravação",
+                                          "Deseja realmente gravar essa movimentação?").confirmation.exec_()
                 if result == QtWidgets.QMessageBox.Yes:
                     if self.tabWidget.currentIndex() == 0: # Entrada
                         # Coletar dados da interface do usuário
@@ -56,7 +55,7 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
-                        QtWidgets.QMessageBox.information(self, "Sucesso", "Movimentação gravada com sucesso.")
+                        CustomMessageBox("Sucesso", "Movimentação gravada com sucesso.").information.exec_()
                         self.accept()
                     else:
                         # Coletar dados da interface do usuário
@@ -79,7 +78,7 @@ class MovEstoqueDialog(QDialog, Ui_Dialog):
 
                         self.db.connection.commit()
                         # Exibir mensagem de sucesso
-                        QtWidgets.QMessageBox.information(self, "Sucesso", "Movimentação gravada com sucesso.")
+                        CustomMessageBox("Sucesso", "Movimentação gravada com sucesso.").information.exec_()
                         self.accept()
             else:
                 if self.db.connection.in_transaction:

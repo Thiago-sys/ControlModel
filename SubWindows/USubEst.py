@@ -245,9 +245,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
             if selected_items:
                 selected_row = selected_items[0].row()
 
-                MessageBox = CustomMessageBox("Confirmar Exclusão", "Deseja realmente excluir esta movimentação?")
-                confirmation = MessageBox.confirmation
-                result = confirmation.exec_()
+                result = CustomMessageBox("Confirmar Exclusão", "Deseja realmente excluir esta movimentação?").confirmation.exec_()
 
                 if result == QtWidgets.QMessageBox.Yes:
                     codigo = int(gridMovEst.item(selected_row, 0).text())

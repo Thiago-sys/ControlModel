@@ -237,10 +237,8 @@ class SubWindowLancamentos(QtWidgets.QWidget):
             if selected_items:
                 selected_row = selected_items[0].row()
 
-                MessageBox = CustomMessageBox("Confirmar Exclusão", "Deseja excluir esse grupo de lançamento? \n"
-                                              "Ao realizar essa ação todos os lançamentos do grupo serão excluídos")
-                confirmation = MessageBox.confirmation
-                result = confirmation.exec_()
+                result = CustomMessageBox("Confirmar Exclusão", "Deseja excluir esse grupo de lançamento? \n"
+                                          "Ao realizar essa ação todos os lançamentos do grupo serão excluídos").confirmation.exec_()
 
                 if result == QtWidgets.QMessageBox.Yes:
                     codigo = int(gridLan.item(selected_row, 12).text())
