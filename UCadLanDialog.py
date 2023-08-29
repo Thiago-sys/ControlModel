@@ -9,7 +9,7 @@ from UCustomMessageBox import CustomMessageBox
 
 
 class CadLanDialog(QDialog, Ui_Dialog):
-    def __init__(self, db:DatabaseManager, state: str, codigo=None, grupo=None):
+    def __init__(self, db: DatabaseManager, state: str, codigo=None, grupo=None):
         super().__init__()
         self.setupUi(self)
 
