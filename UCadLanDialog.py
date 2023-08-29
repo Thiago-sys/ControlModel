@@ -62,6 +62,9 @@ class CadLanDialog(QDialog, Ui_Dialog):
 
         self.codigoExcluido = []
 
+        self.gridLanCompras.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.gridLanVendas.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+
     def gravar(self):
         try:
             if self.state == 'Insert':
@@ -228,7 +231,7 @@ class CadLanDialog(QDialog, Ui_Dialog):
 
         except Exception as e:
             self.db.connection.rollback()  # Desfaz as alterações em caso de erro
-            QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao gravar lançamento(s): {str(e)}")
+            CustomMessageBox("Erro", f"Erro ao gravar lançamento(s): {str(e)}").error.exec_()
             self.reject()
 
     def cancelar(self):

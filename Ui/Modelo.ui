@@ -823,7 +823,7 @@ border: none;</string>
           </column>
           <column>
            <property name="text">
-            <string>Grupo</string>
+            <string>Data da última compra</string>
            </property>
           </column>
           <column>
@@ -833,12 +833,22 @@ border: none;</string>
           </column>
           <column>
            <property name="text">
-            <string>Data da última compra</string>
+            <string>CODFOR</string>
            </property>
           </column>
           <column>
            <property name="text">
             <string>Fornecedor</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>CODGRP</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Grupo</string>
            </property>
           </column>
          </widget>

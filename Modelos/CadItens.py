@@ -112,9 +112,7 @@ class Ui_Dialog(object):
         self.btnGravar.setStyleSheet("background:transparent\n"
 "")
         self.btnGravar.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/2x/save.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnGravar.setIcon(icon)
+        self.btnGravar.setIcon(QtGui.QIcon("icons/2x/save.png"))
         self.btnGravar.setIconSize(QtCore.QSize(48, 48))
         self.btnGravar.setObjectName("btnGravar")
         self.horizontalLayout.addWidget(self.btnGravar)
@@ -127,9 +125,7 @@ class Ui_Dialog(object):
         self.btnCancelar.setStyleSheet("background:transparent\n"
 "")
         self.btnCancelar.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/2x/cancel.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnCancelar.setIcon(icon1)
+        self.btnCancelar.setIcon(QtGui.QIcon("icons/2x/cancel.png"))
         self.btnCancelar.setIconSize(QtCore.QSize(48, 48))
         self.btnCancelar.setObjectName("btnCancelar")
         self.horizontalLayout.addWidget(self.btnCancelar)

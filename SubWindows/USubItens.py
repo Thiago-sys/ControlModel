@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 from UCadItensDialog import CadItensDialog
 from datetime import datetime
+from UCustomMessageBox import CustomMessageBox
 
 
 class SubWindowItens(QtWidgets.QWidget):
@@ -16,7 +17,7 @@ class SubWindowItens(QtWidgets.QWidget):
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.gridItens = QtWidgets.QTableWidget(self.subItens)
         self.gridItens.setObjectName("gridItens")
-        self.gridItens.setColumnCount(6)
+        self.gridItens.setColumnCount(8)
         self.gridItens.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.gridItens.setHorizontalHeaderItem(0, item)
@@ -30,6 +31,10 @@ class SubWindowItens(QtWidgets.QWidget):
         self.gridItens.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
         self.gridItens.setHorizontalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.gridItens.setHorizontalHeaderItem(6, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.gridItens.setHorizontalHeaderItem(7, item)
         self.gridItens.horizontalHeader().setDefaultSectionSize(130)
         self.gridItens.horizontalHeader().setMinimumSectionSize(130)
         self.verticalLayout_4.addWidget(self.gridItens)
@@ -88,38 +93,90 @@ class SubWindowItens(QtWidgets.QWidget):
         item = self.gridItens.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Descrição"))
         item = self.gridItens.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "Grupo"))
+        item.setText(_translate("MainWindow", "Data da última compra"))
         item = self.gridItens.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "Valor de compra"))
         item = self.gridItens.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "Data da última compra"))
+        item.setText(_translate("MainWindow", "CODFOR"))
         item = self.gridItens.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Fornecedor"))
+        item = self.gridItens.horizontalHeaderItem(6)
+        item.setText(_translate("MainWindow", "CODGRP"))
+        item = self.gridItens.horizontalHeaderItem(7)
+        item.setText(_translate("MainWindow", "Grupo"))
+
+        self.gridItens.setColumnHidden(4, True)
+        self.gridItens.setColumnHidden(6, True)
 
         self.btnInserirItens.clicked.connect(self.inserir)
-        self.btnEditarItens.clicked.connect(self.editar)
-        self.btnExcluirItens.clicked.connect(self.excluir)
+        self.btnEditarItens.clicked.connect(lambda event: self.editar(self.gridItens))
+        self.btnExcluirItens.clicked.connect(lambda event: self.excluir(self.gridItens))
 
         self.buscarItens(self.gridItens)
+
+        self.gridItens.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
     def get(self):
         return self.subItens
 
     def inserir(self):
-        cadItens = CadItensDialog()
+        cadItens = CadItensDialog(self.db, "Insert")
         cadItens.exec_()
 
-    def editar(self):
-        pass
+        self.buscarItens(self.gridItens)
 
-    def excluir(self):
+    def editar(self, gridItem):
+        selected_items = gridItem.selectedItems()
+        if selected_items:
+            selected_row = selected_items[0].row()
+
+            codigo = gridItem.item(selected_row, 0).text()
+            descricao = gridItem.item(selected_row, 1).text()
+            valor = float(gridItem.item(selected_row, 2).text().replace('R$ ', '').replace('.', '').replace(',', '.'))
+            data_objeto = datetime.strptime(gridItem.item(selected_row, 3).text(), "%d/%m/%Y")
+            data = data_objeto.strftime("%Y-%m-%d")
+            codFornecedor = gridItem.item(selected_row, 4).text()
+            codGrupo = gridItem.item(selected_row, 6).text()
+
+            cadItem = CadItensDialog(self.db, "Edit", codigo)
+            cadItem.setWindowTitle("Editar Item")
+
+            cadItem.edtDescricao.setText(descricao)
+            cadItem.dteData.setDate(QtCore.QDate.fromString(data, "yyyy-MM-dd"))
+            cadItem.dblValor.setValue(valor)
+            cadItem.selecionarFornecedorPorCodigo(codFornecedor)
+            cadItem.selecionarGrupoPorCodigo(codGrupo)
+
+            cadItem.exec_()
+
+            self.buscarItens(gridItem)
+
+    def excluir(self, gridItem):
+        try:
+            selected_items = gridItem.selectedItems()
+
+            if selected_items:
+                selected_row = selected_items[0].row()
+
+                result = CustomMessageBox("Confirmar Exclusão", "Deseja excluir esse item?").confirmation.exec_()
+
+                if result == QtWidgets.QMessageBox.Yes:
+                    codigo = int(gridItem.item(selected_row, 0).text())
+
+                    delete_query = f"DELETE FROM TBLITE I WHERE I.CODITE = {codigo}"
+                    self.db.execute_query(delete_query)
+
+                    self.buscarItens(gridItem)
+        except Exception as e:
+            self.db.connection.rollback()  # Desfaz as alterações em caso de erro
+            QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao excluir o item: {str(e)}")
         pass
 
     def buscarItens(self, grid):
         # Consulta à tabela TBLLAN usando a classe DatabaseManager
-        query = "SELECT I.CODITE, I.DSCITE, I.VLRITE, I.DTAAQU, F.DSCFOR, G.DSCGRP " \
-                "FROM TBLITE I LEFT JOIN TBLFOR F ON I.CODFOR = F.CODFOR           " \
-                "              LEFT JOIN TBLGRP G ON I.CODGRP = G.CODGRP           "
+        query = "SELECT I.CODITE, I.DSCITE, I.VLRITE, I.DTAAQU, I.CODFOR, F.DSCFOR, I.CODGRP, G.DSCGRP " \
+                "FROM TBLITE I LEFT JOIN TBLFOR F ON I.CODFOR = F.CODFOR                               " \
+                "              LEFT JOIN TBLGRP G ON I.CODGRP = G.CODGRP                               "
         data = self.db.fetch_data(query)
 
         # Preencher a gridLan com os dados recuperados
@@ -131,7 +188,7 @@ class SubWindowItens(QtWidgets.QWidget):
                 else:
                     if col_num == 2:
                         grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(
-                            'R$ {:,.2f}'.format(value).replace(',', '.').replace('.', ',')))
+                            'R$ {:,.2f}'.format(value).replace(',', ';').replace('.', ',').replace(';', '.')))
                     elif col_num == 3:
                         data_objeto = datetime.strptime(str(value), "%Y-%m-%d")
                         data_formatada = data_objeto.strftime("%d/%m/%Y")
