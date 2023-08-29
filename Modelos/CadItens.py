@@ -165,4 +165,3 @@ class Ui_Dialog(object):
         self.dblValor.setPrefix(_translate("Dialog", "R$ "))
         self.lblFornecedor.setText(_translate("Dialog", "Fornecedor"))
         self.lblGrupo.setText(_translate("Dialog", "Grupo do item"))
-import 48px__rc
