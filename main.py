@@ -74,7 +74,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def mostrarSubItens(self):
         self.fecharSubWindow()
-        subItens = SubWindowItens()
+        subItens = SubWindowItens(self.database_manager)
         sub_window_itens = subItens.get()
         subItens.btnFecharItens.clicked.connect(self.fecharSubWindow)
         self.mdiArea.addSubWindow(sub_window_itens)

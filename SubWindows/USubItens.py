@@ -1,10 +1,14 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
+from UCadItensDialog import CadItensDialog
+from datetime import datetime
 
 
 class SubWindowItens(QtWidgets.QWidget):
-    def __init__(self):
+    def __init__(self, db):
         super().__init__()
+
+        self.db = db
 
         self.subItens = QtWidgets.QWidget()
         self.subItens.setObjectName("subItens")
@@ -92,5 +96,45 @@ class SubWindowItens(QtWidgets.QWidget):
         item = self.gridItens.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Fornecedor"))
 
+        self.btnInserirItens.clicked.connect(self.inserir)
+        self.btnEditarItens.clicked.connect(self.editar)
+        self.btnExcluirItens.clicked.connect(self.excluir)
+
+        self.buscarItens(self.gridItens)
+
     def get(self):
         return self.subItens
+
+    def inserir(self):
+        cadItens = CadItensDialog()
+        cadItens.exec_()
+
+    def editar(self):
+        pass
+
+    def excluir(self):
+        pass
+
+    def buscarItens(self, grid):
+        # Consulta à tabela TBLLAN usando a classe DatabaseManager
+        query = "SELECT I.CODITE, I.DSCITE, I.VLRITE, I.DTAAQU, F.DSCFOR, G.DSCGRP " \
+                "FROM TBLITE I LEFT JOIN TBLFOR F ON I.CODFOR = F.CODFOR           " \
+                "              LEFT JOIN TBLGRP G ON I.CODGRP = G.CODGRP           "
+        data = self.db.fetch_data(query)
+
+        # Preencher a gridLan com os dados recuperados
+        grid.setRowCount(len(data))
+        for row_num, row_data in enumerate(data):
+            for col_num, value in enumerate(row_data):
+                if str(value) == 'None':
+                    grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
+                else:
+                    if col_num == 2:
+                        grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(
+                            'R$ {:,.2f}'.format(value).replace(',', '.').replace('.', ',')))
+                    elif col_num == 3:
+                        data_objeto = datetime.strptime(str(value), "%Y-%m-%d")
+                        data_formatada = data_objeto.strftime("%d/%m/%Y")
+                        grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(data_formatada))
+                    else:
+                        grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
