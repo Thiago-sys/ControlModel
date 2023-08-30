@@ -123,7 +123,7 @@ border: none;</string>
 border: none;</string>
          </property>
          <property name="text">
-          <string>Grupo de Itens</string>
+          <string>Grupos</string>
          </property>
          <property name="icon">
           <iconset>

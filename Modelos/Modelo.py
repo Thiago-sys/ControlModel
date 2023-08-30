@@ -485,7 +485,7 @@ class Ui_MainWindow(object):
         self.btnLan.setText(_translate("MainWindow", "Lançamentos"))
         self.btnEst.setText(_translate("MainWindow", "Estoque"))
         self.btnItens.setText(_translate("MainWindow", "Itens"))
-        self.btnGrpItens.setText(_translate("MainWindow", "Grupo de Itens"))
+        self.btnGrpItens.setText(_translate("MainWindow", "Grupos"))
         self.subLan.setWindowTitle(_translate("MainWindow", "Lançamentos"))
         item = self.gridLan.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Código"))
