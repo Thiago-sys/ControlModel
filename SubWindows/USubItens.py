@@ -170,7 +170,6 @@ class SubWindowItens(QtWidgets.QWidget):
         except Exception as e:
             self.db.connection.rollback()  # Desfaz as alterações em caso de erro
             QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao excluir o item: {str(e)}")
-        pass
 
     def buscarItens(self, grid):
         # Consulta à tabela TBLLAN usando a classe DatabaseManager

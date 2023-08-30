@@ -1,10 +1,14 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
+from UCadGruposDialog import CadGruposDialog
+from UCustomMessageBox import CustomMessageBox
 
 
 class SubWindowGrupoItens(QtWidgets.QWidget):
-    def __init__(self):
+    def __init__(self, db):
         super().__init__()
+
+        self.db = db
 
         self.subGrupo = QtWidgets.QWidget()
         self.subGrupo.setAutoFillBackground(False)
@@ -77,5 +81,69 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
         item = self.gridGrupoItens.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Descrição"))
 
+        self.gridGrupoItens.setColumnWidth(1, 200)
+
+        self.btnInserirGrupo.clicked.connect(self.inserir)
+        self.btnEditarGrupo.clicked.connect(lambda event: self.editar(self.gridGrupoItens))
+        self.btnExcluirGrupo.clicked.connect(lambda event: self.excluir(self.gridGrupoItens))
+
+        self.buscarGrupos(self.gridGrupoItens)
+
     def get(self):
         return self.subGrupo
+
+    def inserir(self):
+        cadGrupos = CadGruposDialog(self.db, "Insert")
+        cadGrupos.exec_()
+
+        self.buscarGrupos(self.gridGrupoItens)
+
+    def editar(self, gridGrupo):
+        selected_items = gridGrupo.selectedItems()
+        if selected_items:
+            selected_row = selected_items[0].row()
+
+            codigo = gridGrupo.item(selected_row, 0).text()
+            descricao = gridGrupo.item(selected_row, 1).text()
+
+            cadGrupo = CadGruposDialog(self.db, "Edit", codigo)
+            cadGrupo.setWindowTitle("Editar Item")
+
+            cadGrupo.edtDescricao.setText(descricao)
+
+            cadGrupo.exec_()
+
+            self.buscarGrupos(gridGrupo)
+    def excluir(self, gridGrupo):
+        try:
+            selected_items = gridGrupo.selectedItems()
+
+            if selected_items:
+                selected_row = selected_items[0].row()
+
+                result = CustomMessageBox("Confirmar Exclusão", "Deseja excluir esse grupo?").confirmation.exec_()
+
+                if result == QtWidgets.QMessageBox.Yes:
+                    codigo = int(gridGrupo.item(selected_row, 0).text())
+
+                    delete_query = f"DELETE FROM TBLGRP G WHERE G.CODGRP = {codigo}"
+                    self.db.execute_query(delete_query)
+
+                    self.buscarGrupos(gridGrupo)
+        except Exception as e:
+            self.db.connection.rollback()  # Desfaz as alterações em caso de erro
+            QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao excluir o item: {str(e)}")
+
+    def buscarGrupos(self, grid):
+        # Consulta à tabela TBLLAN usando a classe DatabaseManager
+        query = "SELECT * FROM TBLGRP"
+        data = self.db.fetch_data(query)
+
+        # Preencher a gridLan com os dados recuperados
+        grid.setRowCount(len(data))
+        for row_num, row_data in enumerate(data):
+            for col_num, value in enumerate(row_data):
+                if str(value) == 'None':
+                    grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
+                else:
+                    grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))

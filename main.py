@@ -82,7 +82,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def mostrarSubGrupoItens(self):
         self.fecharSubWindow()
-        subGrupo = SubWindowGrupoItens()
+        subGrupo = SubWindowGrupoItens(self.database_manager)
         sub_window_grupo = subGrupo.get()
         subGrupo.btnFecharGrupo.clicked.connect(self.fecharSubWindow)
         self.mdiArea.addSubWindow(sub_window_grupo)
