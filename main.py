@@ -26,25 +26,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnGrpItens.setIcon(QIcon("icons/2x/btnGrpItens.png"))
         self.btnGrpItens.clicked.connect(self.mostrarSubGrupoItens)
 
-        self.btnInserirLan.setIcon(QIcon("icons/2x/insert.png"))
-        self.btnInserirEst.setIcon(QIcon("icons/2x/insert.png"))
-        self.btnInserirItens.setIcon(QIcon("icons/2x/insert.png"))
-        self.btnInserirGrupo.setIcon(QIcon("icons/2x/insert.png"))
+        self.btnClientes.setIcon(QIcon("icons/2x/btnClientes.png"))
 
-        self.btnEditarLan.setIcon(QIcon("icons/2x/edit.png"))
-        self.btnEditarEst.setIcon(QIcon("icons/2x/edit.png"))
-        self.btnEditarItens.setIcon(QIcon("icons/2x/edit.png"))
-        self.btnEditarGrupo.setIcon(QIcon("icons/2x/edit.png"))
-
-        self.btnExcluirLan.setIcon(QIcon("icons/2x/delete.png"))
-        self.btnExcluirEst.setIcon(QIcon("icons/2x/delete.png"))
-        self.btnExcluirItens.setIcon(QIcon("icons/2x/delete.png"))
-        self.btnExcluirGrupo.setIcon(QIcon("icons/2x/delete.png"))
-
-        self.btnFecharLan.setIcon(QIcon("icons/2x/close.png"))
-        self.btnFecharEst.setIcon(QIcon("icons/2x/close.png"))
-        self.btnFecharItens.setIcon(QIcon("icons/2x/close.png"))
-        self.btnFecharGrupo.setIcon(QIcon("icons/2x/close.png"))
+        self.btnFornecedores.setIcon(QIcon("icons/2x/btnFornecedores.png"))
 
         self.showMaximized()
 
