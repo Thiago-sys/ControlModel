@@ -1,8 +1,7 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
-from UCadLanDialog import CadLanDialog
 from UCustomMessageBox import CustomMessageBox
-from datetime import datetime
+from UCadFornecedorDialog import CadFornecedorDialog
 
 
 class SubWindowFornecedores(QtWidgets.QWidget):
@@ -16,7 +15,7 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.gridFornecedores = QtWidgets.QTableWidget(self.subFornecedores)
         self.gridFornecedores.setObjectName("gridFornecedores")
-        self.gridFornecedores.setColumnCount(6)
+        self.gridFornecedores.setColumnCount(7)
         self.gridFornecedores.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.gridFornecedores.setHorizontalHeaderItem(0, item)
@@ -30,6 +29,8 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         self.gridFornecedores.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
         self.gridFornecedores.setHorizontalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.gridFornecedores.setHorizontalHeaderItem(6, item)
         self.gridFornecedores.horizontalHeader().setDefaultSectionSize(120)
         self.gridFornecedores.horizontalHeader().setMinimumSectionSize(100)
         self.verticalLayout_8.addWidget(self.gridFornecedores)
@@ -88,16 +89,19 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         item = self.gridFornecedores.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Descrição"))
         item = self.gridFornecedores.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "Inscrição"))
+        item.setText(_translate("MainWindow", "TIPINS"))
         item = self.gridFornecedores.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "Telefone"))
+        item.setText(_translate("MainWindow", "Inscrição"))
         item = self.gridFornecedores.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "Email"))
+        item.setText(_translate("MainWindow", "Telefone"))
         item = self.gridFornecedores.horizontalHeaderItem(5)
+        item.setText(_translate("MainWindow", "Email"))
+        item = self.gridFornecedores.horizontalHeaderItem(6)
         item.setText(_translate("MainWindow", "Endereço"))
 
-        self.gridFornecedores.setColumnWidth(4, 250)
-        self.gridFornecedores.setColumnWidth(5, 500)
+        self.gridFornecedores.setColumnHidden(2, True)
+        self.gridFornecedores.setColumnWidth(5, 250)
+        self.gridFornecedores.setColumnWidth(6, 500)
 
         self.btnInserirFornecedores.clicked.connect(self.inserirFornecedores)
         self.btnEditarFornecedores.clicked.connect(lambda event: self.editarFornecedores(self.gridFornecedores))
@@ -110,13 +114,64 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         return self.subFornecedores
 
     def inserirFornecedores(self):
-        pass
+        cadFornecedor = CadFornecedorDialog(self.db, "Insert")
+        cadFornecedor.exec_()
+
+        self.buscarFornecedores(self.gridFornecedores)
 
     def editarFornecedores(self, gridFornecedores):
-        pass
+        selected_items = gridFornecedores.selectedItems()
+        if selected_items:
+            selected_row = selected_items[0].row()
+
+            codigo = gridFornecedores.item(selected_row, 0).text()
+            nome = gridFornecedores.item(selected_row, 1).text()
+            tipoInsc = gridFornecedores.item(selected_row, 2).text()
+            inscricao = gridFornecedores.item(selected_row, 3).text()
+            telefone = gridFornecedores.item(selected_row, 4).text()
+            email = gridFornecedores.item(selected_row, 5).text()
+            endereco = gridFornecedores.item(selected_row, 6).text()
+
+            cadFornecedor = CadFornecedorDialog(self.db, "Edit", codigo)
+            cadFornecedor.setWindowTitle("Editar fornecedor")
+
+            cadFornecedor.edtNome.setText(nome)
+            if tipoInsc == 'PF':
+                cadFornecedor.rdgCPF.setChecked(True)
+                cadFornecedor.edtIns.setText(inscricao)
+            else:
+                cadFornecedor.rdgCNPJ.setChecked(True)
+                cadFornecedor.edtIns.setInputMask("99.999.999/9999-99")
+                cadFornecedor.edtIns.setMaxLength(18)
+                cadFornecedor.edtIns.setText(inscricao)
+                cadFornecedor.lblIns.setText("CNPJ")
+            cadFornecedor.edtTelefone.setText(telefone)
+            cadFornecedor.edtEmail.setText(email)
+            cadFornecedor.edtEnd.setText(endereco)
+
+            cadFornecedor.exec_()
+
+            self.buscarFornecedores(gridFornecedores)
 
     def excluirFornecedores(self, gridFornecedores):
-        pass
+        try:
+            selected_items = gridFornecedores.selectedItems()
+
+            if selected_items:
+                selected_row = selected_items[0].row()
+
+                result = CustomMessageBox("Confirmar Exclusão", "Deseja excluir esse fornecedor?").confirmation.exec_()
+
+                if result == QtWidgets.QMessageBox.Yes:
+                    codigo = int(gridFornecedores.item(selected_row, 0).text())
+
+                    delete_query = f"DELETE FROM TBLFOR F WHERE C.CODFOR = {codigo}"
+                    self.db.execute_query(delete_query)
+
+                    self.buscarClientes(gridFornecedores)
+        except Exception as e:
+            self.db.connection.rollback()  # Desfaz as alterações em caso de erro
+            QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao excluir o fornecedor: {str(e)}")
 
     def buscarFornecedores(self, gridFornecedores):
         # Consulta à tabela TBLLAN usando a classe DatabaseManager

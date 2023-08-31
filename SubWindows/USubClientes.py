@@ -1,5 +1,7 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
+from UCadClienteDialog import CadClienteDialog
+from UCustomMessageBox import CustomMessageBox
 
 
 class SubWindowClientes(QtWidgets.QWidget):
@@ -107,13 +109,55 @@ class SubWindowClientes(QtWidgets.QWidget):
         return self.subClientes
 
     def inserirClientes(self):
-        pass
+        cadCliente = CadClienteDialog(self.db, "Insert")
+        cadCliente.exec_()
+
+        self.buscarClientes(self.gridClientes)
 
     def editarClientes(self, gridClientes):
-        pass
+        selected_items = gridClientes.selectedItems()
+        if selected_items:
+            selected_row = selected_items[0].row()
+
+            codigo = gridClientes.item(selected_row, 0).text()
+            nome = gridClientes.item(selected_row, 1).text()
+            inscricao = gridClientes.item(selected_row, 2).text()
+            telefone = gridClientes.item(selected_row, 3).text()
+            email = gridClientes.item(selected_row, 4).text()
+            endereco = gridClientes.item(selected_row, 5).text()
+
+            cadCliente = CadClienteDialog(self.db, "Edit", codigo)
+            cadCliente.setWindowTitle("Editar cliente")
+
+            cadCliente.edtNome.setText(nome)
+            cadCliente.edtCpf.setText(inscricao)
+            cadCliente.edtTelefone.setText(telefone)
+            cadCliente.edtEmail.setText(email)
+            cadCliente.edtEnd.setText(endereco)
+
+            cadCliente.exec_()
+
+            self.buscarClientes(gridClientes)
 
     def excluirClientes(self, gridClientes):
-        pass
+        try:
+            selected_items = gridClientes.selectedItems()
+
+            if selected_items:
+                selected_row = selected_items[0].row()
+
+                result = CustomMessageBox("Confirmar Exclusão", "Deseja excluir esse cliente?").confirmation.exec_()
+
+                if result == QtWidgets.QMessageBox.Yes:
+                    codigo = int(gridClientes.item(selected_row, 0).text())
+
+                    delete_query = f"DELETE FROM TBLCLI C WHERE C.CODCLI = {codigo}"
+                    self.db.execute_query(delete_query)
+
+                    self.buscarClientes(gridClientes)
+        except Exception as e:
+            self.db.connection.rollback()  # Desfaz as alterações em caso de erro
+            QtWidgets.QMessageBox.critical(self, "Erro", f"Erro ao excluir o cliente: {str(e)}")
 
     def buscarClientes(self, gridClientes):
         # Consulta à tabela TBLLAN usando a classe DatabaseManager

@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(336, 354)
-        Dialog.setMinimumSize(QtCore.QSize(336, 354))
-        Dialog.setMaximumSize(QtCore.QSize(336, 354))
+        Dialog.resize(345, 354)
+        Dialog.setMinimumSize(QtCore.QSize(345, 354))
+        Dialog.setMaximumSize(QtCore.QSize(345, 354))
         self.gridLayout = QtWidgets.QGridLayout(Dialog)
         self.gridLayout.setObjectName("gridLayout")
         self.fraTipo = QtWidgets.QFrame(Dialog)
@@ -49,6 +49,8 @@ class Ui_Dialog(object):
         self.verticalLayout_2.addWidget(self.edtIns)
         self.gridLayout.addWidget(self.fraIns, 1, 1, 1, 1)
         self.fraTelefone = QtWidgets.QFrame(Dialog)
+        self.fraTelefone.setMinimumSize(QtCore.QSize(115, 0))
+        self.fraTelefone.setMaximumSize(QtCore.QSize(115, 16777215))
         self.fraTelefone.setFrameShape(QtWidgets.QFrame.Panel)
         self.fraTelefone.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fraTelefone.setObjectName("fraTelefone")
@@ -160,4 +162,3 @@ class Ui_Dialog(object):
         self.lblEmail.setText(_translate("Dialog", "Email"))
         self.lblEnd.setText(_translate("Dialog", "Endereço"))
         self.lblNome.setText(_translate("Dialog", "Nome"))
-import 48px__rc

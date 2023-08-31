@@ -1233,7 +1233,7 @@ border: none;</string>
       </widget>
       <widget class="QWidget" name="subClientes">
        <property name="windowTitle">
-        <string>Subwindow</string>
+        <string>Clientes</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
@@ -1425,7 +1425,7 @@ border: none;</string>
       </widget>
       <widget class="QWidget" name="subFornecedores">
        <property name="windowTitle">
-        <string>Subwindow</string>
+        <string>Fornecedores</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_8">
         <item>
@@ -1444,6 +1444,11 @@ border: none;</string>
           <column>
            <property name="text">
             <string>Descrição</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>TIPINS</string>
            </property>
           </column>
           <column>
