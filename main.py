@@ -6,6 +6,8 @@ from SubWindows.USubLan import SubWindowLancamentos
 from SubWindows.USubEst import SubWindowEstoque
 from SubWindows.USubItens import SubWindowItens
 from SubWindows.USubGrpItens import SubWindowGrupoItens
+from SubWindows.USubClientes import SubWindowClientes
+from SubWindows.USubFornecedores import SubWindowFornecedores
 from UDataBaseManager import DatabaseManager
 
 
@@ -14,21 +16,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
-        self.btnLan.setIcon(QIcon("icons/2x/btnLan.png"))
         self.btnLan.clicked.connect(self.mostrarSubLancamentos)
-
-        self.btnEst.setIcon(QIcon("icons/2x/btnEst.png"))
         self.btnEst.clicked.connect(self.mostrarSubEstoque)
-
-        self.btnItens.setIcon(QIcon("icons/2x/btnItens.png"))
         self.btnItens.clicked.connect(self.mostrarSubItens)
-
-        self.btnGrpItens.setIcon(QIcon("icons/2x/btnGrpItens.png"))
         self.btnGrpItens.clicked.connect(self.mostrarSubGrupoItens)
-
-        self.btnClientes.setIcon(QIcon("icons/2x/btnClientes.png"))
-
-        self.btnFornecedores.setIcon(QIcon("icons/2x/btnFornecedores.png"))
+        self.btnClientes.clicked.connect(self.mostrarSubClientes)
+        self.btnFornecedores.clicked.connect(self.mostrarSubFornecedores)
 
         self.showMaximized()
 
@@ -71,6 +64,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         subGrupo.btnFecharGrupo.clicked.connect(self.fecharSubWindow)
         self.mdiArea.addSubWindow(sub_window_grupo)
         sub_window_grupo.showMaximized()
+
+    def mostrarSubClientes(self):
+        self.fecharSubWindow()
+        subClientes = SubWindowClientes(self.database_manager)
+        sub_window_clientes = subClientes.get()
+        subClientes.btnFecharClientes.clicked.connect(self.fecharSubWindow)
+        self.mdiArea.addSubWindow(sub_window_clientes)
+        sub_window_clientes.showMaximized()
+
+    def mostrarSubFornecedores(self):
+        self.fecharSubWindow()
+        subFornecedores = SubWindowFornecedores(self.database_manager)
+        sub_window_fornecedores = subFornecedores.get()
+        subFornecedores.btnFecharFornecedores.clicked.connect(self.fecharSubWindow)
+        self.mdiArea.addSubWindow(sub_window_fornecedores)
+        sub_window_fornecedores.showMaximized()
 
     def fecharSubWindow(self):
         for sub_window in self.mdiArea.subWindowList():

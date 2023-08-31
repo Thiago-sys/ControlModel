@@ -31,9 +31,7 @@ class Ui_MainWindow(object):
         self.btnLan.setFont(font)
         self.btnLan.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/2x/lancamento.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnLan.setIcon(icon)
+        self.btnLan.setIcon(QtGui.QIcon("icons/2x/btnLan.png"))
         self.btnLan.setIconSize(QtCore.QSize(48, 48))
         self.btnLan.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnLan.setObjectName("btnLan")
@@ -44,9 +42,7 @@ class Ui_MainWindow(object):
         self.btnEst.setFont(font)
         self.btnEst.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/2x/inventory.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnEst.setIcon(icon1)
+        self.btnEst.setIcon(QtGui.QIcon("icons/2x/btnEst.png"))
         self.btnEst.setIconSize(QtCore.QSize(48, 48))
         self.btnEst.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnEst.setObjectName("btnEst")
@@ -57,9 +53,7 @@ class Ui_MainWindow(object):
         self.btnItens.setFont(font)
         self.btnItens.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/icons/2x/itens.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnItens.setIcon(icon2)
+        self.btnItens.setIcon(QtGui.QIcon("icons/2x/btnItens.png"))
         self.btnItens.setIconSize(QtCore.QSize(48, 48))
         self.btnItens.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnItens.setObjectName("btnItens")
@@ -70,9 +64,7 @@ class Ui_MainWindow(object):
         self.btnGrpItens.setFont(font)
         self.btnGrpItens.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/icons/2x/group.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnGrpItens.setIcon(icon3)
+        self.btnGrpItens.setIcon(QtGui.QIcon("icons/2x/btnGrpItens.png"))
         self.btnGrpItens.setIconSize(QtCore.QSize(48, 48))
         self.btnGrpItens.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnGrpItens.setObjectName("btnGrpItens")
@@ -83,6 +75,7 @@ class Ui_MainWindow(object):
         self.btnClientes.setFont(font)
         self.btnClientes.setStyleSheet("background-color: transparent; \n"
 "border: none;")
+        self.btnClientes.setIcon(QtGui.QIcon("icons/2x/btnClientes.png"))
         self.btnClientes.setIconSize(QtCore.QSize(48, 48))
         self.btnClientes.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnClientes.setObjectName("btnClientes")
@@ -94,6 +87,7 @@ class Ui_MainWindow(object):
         self.btnFornecedores.setFont(font)
         self.btnFornecedores.setStyleSheet("background-color: transparent; \n"
 "border: none;")
+        self.btnFornecedores.setIcon(QtGui.QIcon("icons/2x/btnFornecedores.png"))
         self.btnFornecedores.setIconSize(QtCore.QSize(48, 48))
         self.btnFornecedores.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnFornecedores.setObjectName("btnFornecedores")

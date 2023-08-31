@@ -50,10 +50,12 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         self.gridLan.horizontalHeader().setCascadingSectionResizes(False)
         self.gridLan.horizontalHeader().setDefaultSectionSize(120)
         self.gridLan.horizontalHeader().setHighlightSections(True)
-        self.gridLan.horizontalHeader().setMinimumSectionSize(120)
+        self.gridLan.horizontalHeader().setMinimumSectionSize(10)
         self.gridLan.horizontalHeader().setSortIndicatorShown(False)
         self.gridLan.horizontalHeader().setStretchLastSection(False)
         self.gridLan.verticalHeader().setHighlightSections(True)
+        self.gridLan.verticalHeader().setDefaultSectionSize(13)
+        self.gridLan.verticalHeader().setMinimumSectionSize(10)
         self.verticalLayout_2.addWidget(self.gridLan)
         self.fraBotoesLan = QtWidgets.QFrame(self.subLan)
         self.fraBotoesLan.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -132,6 +134,7 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         item = self.gridLan.horizontalHeaderItem(12)
         item.setText(_translate("MainWindow", "Grupo do lançamento"))
 
+        self.gridLan.setColumnWidth(0, 50)
         self.gridLan.setColumnHidden(4, True) # Ocultando a coluna de Código do Item
         self.gridLan.setColumnWidth(5, 200)   # Redimencionando a coluna de Item
         self.gridLan.setColumnHidden(7, True) # Ocultando a coluna de Código do Cliente
