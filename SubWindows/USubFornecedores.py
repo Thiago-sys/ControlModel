@@ -5,7 +5,7 @@ from UCustomMessageBox import CustomMessageBox
 from datetime import datetime
 
 
-class SubWindowFornecedorescamentos(QtWidgets.QWidget):
+class SubWindowFornecedores(QtWidgets.QWidget):
     def __init__(self, db):
         super().__init__()
         self.db = db
@@ -82,7 +82,7 @@ class SubWindowFornecedorescamentos(QtWidgets.QWidget):
         self.verticalLayout_8.addWidget(self.fraBotoesFornecedores)
 
         _translate = QtCore.QCoreApplication.translate
-        self.subFornecedores.setWindowTitle(_translate("MainWindow", "Subwindow"))
+        self.subFornecedores.setWindowTitle(_translate("MainWindow", "Fornecedores"))
         item = self.gridFornecedores.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Código"))
         item = self.gridFornecedores.horizontalHeaderItem(1)
@@ -95,6 +95,9 @@ class SubWindowFornecedorescamentos(QtWidgets.QWidget):
         item.setText(_translate("MainWindow", "Email"))
         item = self.gridFornecedores.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Endereço"))
+
+        self.gridFornecedores.setColumnWidth(4, 250)
+        self.gridFornecedores.setColumnWidth(5, 500)
 
         self.btnInserirFornecedores.clicked.connect(self.inserirFornecedores)
         self.btnEditarFornecedores.clicked.connect(lambda event: self.editarFornecedores(self.gridFornecedores))
@@ -115,5 +118,16 @@ class SubWindowFornecedorescamentos(QtWidgets.QWidget):
     def excluirFornecedores(self, gridFornecedores):
         pass
 
-    def buscarFornecedorescamentos(self, gridFornecedores):
-        pass
+    def buscarFornecedores(self, gridFornecedores):
+        # Consulta à tabela TBLLAN usando a classe DatabaseManager
+        query = "SELECT * FROM TBLFOR"
+        data = self.db.fetch_data(query)
+
+        # Preencher a gridLan com os dados recuperados
+        gridFornecedores.setRowCount(len(data))
+        for row_num, row_data in enumerate(data):
+            for col_num, value in enumerate(row_data):
+                if str(value) == 'None':
+                    gridFornecedores.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
+                else:
+                    gridFornecedores.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))

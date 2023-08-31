@@ -79,11 +79,11 @@ class SubWindowClientes(QtWidgets.QWidget):
         self.verticalLayout_7.addWidget(self.fraBotoesClientes)
 
         _translate = QtCore.QCoreApplication.translate
-        self.subClientes.setWindowTitle(_translate("MainWindow", "Subwindow"))
+        self.subClientes.setWindowTitle(_translate("MainWindow", "Clientes"))
         item = self.gridClientes.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Código"))
         item = self.gridClientes.horizontalHeaderItem(1)
-        item.setText(_translate("MainWindow", "Descrição"))
+        item.setText(_translate("MainWindow", "Nome"))
         item = self.gridClientes.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "Inscrição"))
         item = self.gridClientes.horizontalHeaderItem(3)
@@ -92,6 +92,9 @@ class SubWindowClientes(QtWidgets.QWidget):
         item.setText(_translate("MainWindow", "Email"))
         item = self.gridClientes.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Endereço"))
+
+        self.gridClientes.setColumnWidth(4, 250)
+        self.gridClientes.setColumnWidth(5, 500)
 
         self.btnInserirClientes.clicked.connect(self.inserirClientes)
         self.btnEditarClientes.clicked.connect(lambda event: self.editarClientes(self.gridClientes))
@@ -113,4 +116,20 @@ class SubWindowClientes(QtWidgets.QWidget):
         pass
 
     def buscarClientes(self, gridClientes):
-        pass
+        # Consulta à tabela TBLLAN usando a classe DatabaseManager
+        query = "SELECT * FROM TBLCLI"
+        data = self.db.fetch_data(query)
+
+        # Preencher a gridLan com os dados recuperados
+        gridClientes.setRowCount(len(data))
+        for row_num, row_data in enumerate(data):
+            for col_num, value in enumerate(row_data):
+                if str(value) == 'None':
+                    gridClientes.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
+                else:
+                    if col_num == 0:
+                        item = QtWidgets.QTableWidgetItem(str(value))
+                        item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        gridClientes.setItem(row_num, col_num, item)
+                    else:
+                        gridClientes.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
