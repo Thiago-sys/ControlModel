@@ -146,4 +146,9 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
                 if str(value) == 'None':
                     grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
                 else:
-                    grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
+                    if col_num == 0:
+                        item = QtWidgets.QTableWidgetItem(str(value))
+                        item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        grid.setItem(row_num, col_num, item)
+                    else:
+                        grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))

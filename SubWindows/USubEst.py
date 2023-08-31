@@ -280,10 +280,16 @@ class SubWindowEstoque(QtWidgets.QWidget):
                 if str(value) == 'None':
                     self.gridMovEst.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
                 else:
-                    if col_num == 1:
+                    if col_num == 0:
+                        item = QtWidgets.QTableWidgetItem(str(value))
+                        item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.gridMovEst.setItem(row_num, col_num, item)
+                    elif col_num == 1:
                         data_objeto = datetime.strptime(str(value), "%Y-%m-%d")
                         data_formatada = data_objeto.strftime("%d/%m/%Y")
-                        self.gridMovEst.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(data_formatada))
+                        item = QtWidgets.QTableWidgetItem(data_formatada)
+                        item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.gridMovEst.setItem(row_num, col_num, )
                     else:
                         self.gridMovEst.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
 
@@ -299,4 +305,9 @@ class SubWindowEstoque(QtWidgets.QWidget):
                 if str(value) == 'None':
                     self.gridEst.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
                 else:
-                    self.gridEst.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
+                    if col_num == 0:
+                        item = QtWidgets.QTableWidgetItem(str(value))
+                        item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.gridEst.setItem(row_num, col_num, item)
+                    else:
+                        self.gridEst.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))

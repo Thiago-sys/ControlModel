@@ -267,13 +267,19 @@ class SubWindowLancamentos(QtWidgets.QWidget):
                 if str(value) == 'None':
                     gridLan.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
                 else:
-                    if col_num == 1:
+                    if col_num == 0:
+                        item = QtWidgets.QTableWidgetItem(str(value))
+                        item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        gridLan.setItem(row_num, col_num, item)
+                    elif col_num == 1:
                         data_objeto = datetime.strptime(str(value), "%Y-%m-%d")
                         data_formatada = data_objeto.strftime("%d/%m/%Y")
                         gridLan.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(data_formatada))
                     elif col_num == 3:
-                        gridLan.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(
-                            'R$ {:,.2f}'.format(value).replace(',', '.').replace('.', ',')))
+                        item = QtWidgets.QTableWidgetItem(
+                            'R$ {:,.2f}'.format(value).replace(',', '.').replace('.', ','))
+                        item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        gridLan.setItem(row_num, col_num, item)
                     else:
                         gridLan.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
 

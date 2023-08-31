@@ -185,12 +185,18 @@ class SubWindowItens(QtWidgets.QWidget):
                 if str(value) == 'None':
                     grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(''))
                 else:
-                    if col_num == 2:
+                    if col_num == 0:
+                        item = QtWidgets.QTableWidgetItem(str(value))
+                        item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        grid.setItem(row_num, col_num, item)
+                    elif col_num == 2:
                         grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(
                             'R$ {:,.2f}'.format(value).replace(',', ';').replace('.', ',').replace(';', '.')))
                     elif col_num == 3:
                         data_objeto = datetime.strptime(str(value), "%Y-%m-%d")
                         data_formatada = data_objeto.strftime("%d/%m/%Y")
-                        grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(data_formatada))
+                        item = QtWidgets.QTableWidgetItem(data_formatada)
+                        item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        grid.setItem(row_num, col_num, item)
                     else:
                         grid.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
