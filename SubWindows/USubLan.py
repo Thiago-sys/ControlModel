@@ -151,9 +151,6 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         self.buscarlancamentos(self.gridLan)
         self.gridLan.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
-    def get(self):
-        return self.subLan
-
     def inserirLan(self):
         cadlan = CadLanDialog(self.db, "Insert")
         cadlan.exec_()
