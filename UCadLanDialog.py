@@ -1,7 +1,6 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5 import QtWidgets
 from Modelos.CadLan import Ui_Dialog
-from PyQt5.QtGui import QIcon
 from UPartidaDialog import PartidaDialog
 from UDataBaseManager import DatabaseManager
 from datetime import date
@@ -18,35 +17,14 @@ class CadLanDialog(QDialog, Ui_Dialog):
         self.codigoLancamento = codigo
         self.grupo = grupo
 
-        self.btnGravar.setIcon(QIcon("icons/2x/save.png"))
         self.btnGravar.clicked.connect(self.gravar)
-
-        self.btnCancelar.setIcon(QIcon("icons/2x/cancel.png"))
         self.btnCancelar.clicked.connect(self.cancelar)
-
-        self.btnInsertVendas.setIcon(QIcon("icons/2x/insert.png"))
-        self.btnInsertCompras.setIcon(QIcon("icons/2x/insert.png"))
         self.btnInsertVendas.clicked.connect(self.inserirvenda)
         self.btnInsertCompras.clicked.connect(self.inserircompra)
-
-        self.btnEditVendas.setIcon(QIcon("icons/2x/edit.png"))
-        self.btnEditCompras.setIcon(QIcon("icons/2x/edit.png"))
         self.btnEditVendas.clicked.connect(self.editarvenda)
         self.btnEditCompras.clicked.connect(self.editarcompra)
-
-        self.btnDeleteVendas.setIcon(QIcon("icons/2x/delete.png"))
-        self.btnDeleteCompras.setIcon(QIcon("icons/2x/delete.png"))
         self.btnDeleteVendas.clicked.connect(self.deletarvenda)
         self.btnDeleteCompras.clicked.connect(self.deletarcompra)
-
-        self.gridLanVendas.horizontalHeader().setMinimumSectionSize(30)
-        self.gridLanVendas.setColumnWidth(0, 58)
-        self.gridLanVendas.verticalHeader().setMinimumSectionSize(0)
-        self.gridLanVendas.verticalHeader().setDefaultSectionSize(20)
-        self.gridLanVendas.horizontalHeader().setMinimumSectionSize(30)
-        self.gridLanCompras.setColumnWidth(0, 58)
-        self.gridLanCompras.verticalHeader().setMinimumSectionSize(0)
-        self.gridLanCompras.verticalHeader().setDefaultSectionSize(20)
 
         self.dteDtaCompras.setDate(date.today())
         self.dteDtaVendas.setDate(date.today())
@@ -57,13 +35,8 @@ class CadLanDialog(QDialog, Ui_Dialog):
         self.buscarClientes()
         self.buscarFornecedores()
 
-        self.gridLanVendas.setColumnHidden(4, True)  # Ocultando a coluna de Código do Item
-        self.gridLanCompras.setColumnHidden(4, True)  # Ocultando a coluna de Código do Item
-
         self.codigoExcluido = []
 
-        self.gridLanCompras.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.gridLanVendas.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
     def gravar(self):
         try:

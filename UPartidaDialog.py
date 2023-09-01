@@ -16,10 +16,7 @@ class PartidaDialog(QDialog, Ui_Dialog):
         self.state = state
         self.codigo = codigo
 
-        self.btnGravar.setIcon(QIcon("icons/2x/save.png"))
         self.btnGravar.clicked.connect(self.gravar)
-
-        self.btnCancelar.setIcon(QIcon("icons/2x/cancel.png"))
         self.btnCancelar.clicked.connect(self.cancelar)
 
         self.itemIndexMap = {}

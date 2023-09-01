@@ -49,7 +49,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         subLan = SubWindowLancamentos(self.database_manager)
         sub_window_lancamentos = subLan.get()
         subLan.btnFecharLan.clicked.connect(self.fecharSubWindow)
-        self.gridLan = subLan.gridLan
         self.mdiArea.addSubWindow(sub_window_lancamentos)
         sub_window_lancamentos.showMaximized()
 
