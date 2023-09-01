@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.QtGui import QIcon
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import QDateTime, Qt
 from Modelos.Modelo import Ui_MainWindow
 from SubWindows.USubLan import SubWindowLancamentos
 from SubWindows.USubEst import SubWindowEstoque
@@ -31,6 +32,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             password='masterkey',
             database='control'
         )
+
+        self.data = QLabel()
+        self.data.setStyleSheet("font-size: 13px; padding-left: 20px;")
+        self.statusbar.addWidget(self.data)
+
+        self.update_date_time()  # Update the label initially
+
+        # Set up a timer to update the date and time label
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.update_date_time)
+        self.timer.start(1000)  # Update every 1 second
 
     def mostrarSubLancamentos(self):
         self.fecharSubWindow()
@@ -84,6 +96,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def fecharSubWindow(self):
         for sub_window in self.mdiArea.subWindowList():
             sub_window.close()
+
+    def update_date_time(self):
+        current_date_time = QDateTime.currentDateTime()
+        formatted_date_time = current_date_time.toString("dd/MM/yyyy hh:mm:ss")
+        self.data.setText("Data: " + formatted_date_time)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
