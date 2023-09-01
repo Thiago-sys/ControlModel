@@ -25,6 +25,8 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
         self.gridGrupoItens.setHorizontalHeaderItem(1, item)
         self.gridGrupoItens.horizontalHeader().setDefaultSectionSize(120)
         self.gridGrupoItens.horizontalHeader().setMinimumSectionSize(100)
+        self.gridGrupoItens.verticalHeader().setDefaultSectionSize(13)
+        self.gridGrupoItens.verticalHeader().setMinimumSectionSize(10)
         self.verticalLayout_5.addWidget(self.gridGrupoItens)
         self.fraBotoesGrupo = QtWidgets.QFrame(self.subGrupo)
         self.fraBotoesGrupo.setFrameShape(QtWidgets.QFrame.StyledPanel)

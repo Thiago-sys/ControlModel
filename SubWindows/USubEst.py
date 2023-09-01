@@ -54,6 +54,8 @@ class SubWindowEstoque(QtWidgets.QWidget):
         item = QtWidgets.QTableWidgetItem()
         self.gridMovEst.setHorizontalHeaderItem(10, item)
         self.gridMovEst.horizontalHeader().setMinimumSectionSize(50)
+        self.gridMovEst.verticalHeader().setDefaultSectionSize(13)
+        self.gridMovEst.verticalHeader().setMinimumSectionSize(10)
         self.verticalLayout_3.addWidget(self.gridMovEst)
         self.gridLayout.addWidget(self.fraMovEst, 0, 0, 1, 1)
         self.fraEst = QtWidgets.QFrame(self.subEst)
@@ -81,6 +83,8 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.gridEst.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.gridEst.setHorizontalHeaderItem(3, item)
+        self.gridEst.verticalHeader().setDefaultSectionSize(13)
+        self.gridEst.verticalHeader().setMinimumSectionSize(10)
         self.verticalLayout_6.addWidget(self.gridEst)
         self.gridLayout.addWidget(self.fraEst, 0, 1, 1, 1)
         self.fraBotoesEst = QtWidgets.QFrame(self.subEst)
@@ -289,7 +293,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
                         data_formatada = data_objeto.strftime("%d/%m/%Y")
                         item = QtWidgets.QTableWidgetItem(data_formatada)
                         item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                        self.gridMovEst.setItem(row_num, col_num, )
+                        self.gridMovEst.setItem(row_num, col_num, item)
                     else:
                         self.gridMovEst.setItem(row_num, col_num, QtWidgets.QTableWidgetItem(str(value)))
 

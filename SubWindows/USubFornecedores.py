@@ -33,6 +33,8 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         self.gridFornecedores.setHorizontalHeaderItem(6, item)
         self.gridFornecedores.horizontalHeader().setDefaultSectionSize(120)
         self.gridFornecedores.horizontalHeader().setMinimumSectionSize(100)
+        self.gridFornecedores.verticalHeader().setDefaultSectionSize(13)
+        self.gridFornecedores.verticalHeader().setMinimumSectionSize(10)
         self.verticalLayout_8.addWidget(self.gridFornecedores)
         self.fraBotoesFornecedores = QtWidgets.QFrame(self.subFornecedores)
         self.fraBotoesFornecedores.setFrameShape(QtWidgets.QFrame.StyledPanel)

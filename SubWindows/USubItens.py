@@ -37,6 +37,8 @@ class SubWindowItens(QtWidgets.QWidget):
         self.gridItens.setHorizontalHeaderItem(7, item)
         self.gridItens.horizontalHeader().setDefaultSectionSize(130)
         self.gridItens.horizontalHeader().setMinimumSectionSize(130)
+        self.gridItens.verticalHeader().setDefaultSectionSize(13)
+        self.gridItens.verticalHeader().setMinimumSectionSize(10)
         self.verticalLayout_4.addWidget(self.gridItens)
         self.fraBotoesItens = QtWidgets.QFrame(self.subItens)
         self.fraBotoesItens.setFrameShape(QtWidgets.QFrame.StyledPanel)

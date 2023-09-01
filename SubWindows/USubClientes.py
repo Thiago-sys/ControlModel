@@ -31,6 +31,8 @@ class SubWindowClientes(QtWidgets.QWidget):
         self.gridClientes.setHorizontalHeaderItem(5, item)
         self.gridClientes.horizontalHeader().setDefaultSectionSize(120)
         self.gridClientes.horizontalHeader().setMinimumSectionSize(100)
+        self.gridClientes.verticalHeader().setDefaultSectionSize(13)
+        self.gridClientes.verticalHeader().setMinimumSectionSize(10)
         self.verticalLayout_7.addWidget(self.gridClientes)
         self.fraBotoesClientes = QtWidgets.QFrame(self.subClientes)
         self.fraBotoesClientes.setFrameShape(QtWidgets.QFrame.StyledPanel)
