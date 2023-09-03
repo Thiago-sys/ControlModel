@@ -24,6 +24,10 @@ class PartidaDialog(QDialog, Ui_Dialog):
         self.buscarItens()
 
     def gravar(self):
+        if self.dblValor.text().strip().replace('R', '').replace('$', '').replace(',', '').replace('0', '').replace(' ', '') == "":
+            CustomMessageBox("Erro", f"Os seguintes campos são obrigatórios: \nValor").error.exec_()
+            self.dblValor.setFocus()
+            return
 
         if self.state == 'Insert':
             item_selecionado = self.obterCodItemSelecionado()

@@ -19,8 +19,16 @@ class CadFornecedorDialog(QDialog, Ui_Dialog):
         self.rdgCPF.clicked.connect(self.attMask)
         self.rdgCNPJ.clicked.connect(self.attMask)
 
+        self.required = [self.edtNome, self.edtIns]
+
 
     def gravar(self):
+        for campo in self.required:
+            if campo.text().strip().replace('-', '').replace('.', '').replace('/', '') == "":
+                CustomMessageBox("Erro", f"Os seguintes campos são obrigatórios: \nNome\nInscrição").error.exec_()
+                self.edtNome.setFocus()
+                return
+
         try:
             if self.db.connection.in_transaction:
                 self.db.connection.rollback()

@@ -17,7 +17,15 @@ class CadClienteDialog(QDialog, Ui_Dialog):
         self.btnGravar.clicked.connect(self.gravar)
         self.btnCancelar.clicked.connect(self.cancelar)
 
+        self.required = [self.edtNome, self.edtCpf]
+
     def gravar(self):
+        for campo in self.required:
+            if campo.text().strip().replace('-', '').replace('.', '') == "":
+                CustomMessageBox("Erro", f"Os seguintes campos são obrigatórios: \nNome\nCPF").error.exec_()
+                self.edtNome.setFocus()
+                return
+
         try:
             if self.db.connection.in_transaction:
                 self.db.connection.rollback()

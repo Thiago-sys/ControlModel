@@ -26,8 +26,16 @@ class CadItensDialog(QDialog, Ui_Dialog):
         self.buscarGrupos()
         self.buscarFornecedores()
 
+        self.required = [self.edtDescricao, self.dblValor]
+
 
     def gravar(self):
+        for campo in self.required:
+            if campo.text().strip().replace('R', '').replace('$', '').replace(',', '').replace('0', '').replace(' ', '') == "":
+                CustomMessageBox("Erro", f"Os seguintes campos são obrigatórios: \nDescrição\nValor").error.exec_()
+                self.edtDescricao.setFocus()
+                return
+
         try:
             if self.state == 'Insert':
                 if self.db.connection.in_transaction:

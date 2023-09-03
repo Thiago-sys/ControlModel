@@ -19,6 +19,11 @@ class CadGruposDialog(QDialog, Ui_Dialog):
 
 
     def gravar(self):
+        if self.edtDescricao.text().strip() == "":
+            CustomMessageBox("Erro", f"Os seguintes campos são obrigatórios: \nDescrição").error.exec_()
+            self.edtDescricao.setFocus()
+            return
+
         try:
             if self.state == 'Insert':
                 if self.db.connection.in_transaction:
