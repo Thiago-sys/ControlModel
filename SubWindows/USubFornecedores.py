@@ -2,15 +2,13 @@ from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 from UCustomMessageBox import CustomMessageBox
 from UCadFornecedorDialog import CadFornecedorDialog
-import sys
-import os.path
 
 
 class SubWindowFornecedores(QtWidgets.QWidget):
     def __init__(self, db):
         super().__init__()
         self.db = db
-        script_directory = sys.path[0]
+
         self.subFornecedores = QtWidgets.QWidget()
         self.subFornecedores.setObjectName("subFornecedores")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.subFornecedores)
@@ -50,7 +48,7 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         self.btnInserirFornecedores.setStyleSheet("background-color: transparent; \n"
                                                   "border: none;")
         self.btnInserirFornecedores.setText("")
-        self.btnInserirFornecedores.setIcon(QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirFornecedores.setIcon(QIcon("icons/2x/insert.png"))
         self.btnInserirFornecedores.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirFornecedores.setObjectName("btnInserirFornecedores")
         self.horizontalLayout_8.addWidget(self.btnInserirFornecedores)
@@ -59,7 +57,7 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         self.btnEditarFornecedores.setStyleSheet("background-color: transparent; \n"
                                                  "border: none;")
         self.btnEditarFornecedores.setText("")
-        self.btnEditarFornecedores.setIcon(QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarFornecedores.setIcon(QIcon("icons/2x/edit.png"))
         self.btnEditarFornecedores.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarFornecedores.setObjectName("btnEditarFornecedores")
         self.horizontalLayout_8.addWidget(self.btnEditarFornecedores)
@@ -68,7 +66,7 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         self.btnExcluirFornecedores.setStyleSheet("background-color: transparent; \n"
                                                   "border: none;")
         self.btnExcluirFornecedores.setText("")
-        self.btnExcluirFornecedores.setIcon(QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirFornecedores.setIcon(QIcon("icons/2x/delete.png"))
         self.btnExcluirFornecedores.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirFornecedores.setObjectName("btnExcluirFornecedores")
         self.horizontalLayout_8.addWidget(self.btnExcluirFornecedores)
@@ -80,7 +78,7 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         self.btnFecharFornecedores.setStyleSheet("background-color: transparent; \n"
                                                  "border: none;")
         self.btnFecharFornecedores.setText("")
-        self.btnFecharFornecedores.setIcon(QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharFornecedores.setIcon(QIcon("icons/2x/close.png"))
         self.btnFecharFornecedores.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharFornecedores.setObjectName("btnFecharFornecedores")
         self.horizontalLayout_8.addWidget(self.btnFecharFornecedores)

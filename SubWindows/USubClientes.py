@@ -2,15 +2,13 @@ from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 from UCadClienteDialog import CadClienteDialog
 from UCustomMessageBox import CustomMessageBox
-import sys
-import os.path
 
 
 class SubWindowClientes(QtWidgets.QWidget):
     def __init__(self, db):
         super().__init__()
         self.db = db
-        script_directory = sys.path[0]
+
         self.subClientes = QtWidgets.QWidget()
         self.subClientes.setObjectName("subClientes")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.subClientes)
@@ -48,7 +46,7 @@ class SubWindowClientes(QtWidgets.QWidget):
         self.btnInserirClientes.setStyleSheet("background-color: transparent; \n"
                                               "border: none;")
         self.btnInserirClientes.setText("")
-        self.btnInserirClientes.setIcon(QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirClientes.setIcon(QIcon("icons/2x/insert.png"))
         self.btnInserirClientes.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirClientes.setObjectName("btnInserirClientes")
         self.horizontalLayout_7.addWidget(self.btnInserirClientes)
@@ -57,7 +55,7 @@ class SubWindowClientes(QtWidgets.QWidget):
         self.btnEditarClientes.setStyleSheet("background-color: transparent; \n"
                                              "border: none;")
         self.btnEditarClientes.setText("")
-        self.btnEditarClientes.setIcon(QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarClientes.setIcon(QIcon("icons/2x/edit.png"))
         self.btnEditarClientes.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarClientes.setObjectName("btnEditarClientes")
         self.horizontalLayout_7.addWidget(self.btnEditarClientes)
@@ -66,7 +64,7 @@ class SubWindowClientes(QtWidgets.QWidget):
         self.btnExcluirClientes.setStyleSheet("background-color: transparent; \n"
                                               "border: none;")
         self.btnExcluirClientes.setText("")
-        self.btnExcluirClientes.setIcon(QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirClientes.setIcon(QIcon("icons/2x/delete.png"))
         self.btnExcluirClientes.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirClientes.setObjectName("btnExcluirClientes")
         self.horizontalLayout_7.addWidget(self.btnExcluirClientes)
@@ -78,7 +76,7 @@ class SubWindowClientes(QtWidgets.QWidget):
         self.btnFecharClientes.setStyleSheet("background-color: transparent; \n"
                                              "border: none;")
         self.btnFecharClientes.setText("")
-        self.btnFecharClientes.setIcon(QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharClientes.setIcon(QIcon("icons/2x/close.png"))
         self.btnFecharClientes.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharClientes.setObjectName("btnFecharClientes")
         self.horizontalLayout_7.addWidget(self.btnFecharClientes)

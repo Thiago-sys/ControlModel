@@ -2,8 +2,6 @@ from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 from UCadGruposDialog import CadGruposDialog
 from UCustomMessageBox import CustomMessageBox
-import sys
-import os.path
 
 
 class SubWindowGrupoItens(QtWidgets.QWidget):
@@ -11,7 +9,7 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
         super().__init__()
 
         self.db = db
-        script_directory = sys.path[0]
+
         self.subGrupo = QtWidgets.QWidget()
         self.subGrupo.setAutoFillBackground(False)
         self.subGrupo.setObjectName("subGrupo")
@@ -42,7 +40,7 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
         self.btnInserirGrupo.setStyleSheet("background-color: transparent; \n"
                                            "border: none;")
         self.btnInserirGrupo.setText("")
-        self.btnInserirGrupo.setIcon(QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirGrupo.setIcon(QIcon("icons/2x/insert.png"))
         self.btnInserirGrupo.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirGrupo.setObjectName("btnInserirGrupo")
         self.horizontalLayout_5.addWidget(self.btnInserirGrupo)
@@ -51,7 +49,7 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
         self.btnEditarGrupo.setStyleSheet("background-color: transparent; \n"
                                           "border: none;")
         self.btnEditarGrupo.setText("")
-        self.btnEditarGrupo.setIcon(QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarGrupo.setIcon(QIcon("icons/2x/edit.png"))
         self.btnEditarGrupo.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarGrupo.setObjectName("btnEditarGrupo")
         self.horizontalLayout_5.addWidget(self.btnEditarGrupo)
@@ -60,7 +58,7 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
         self.btnExcluirGrupo.setStyleSheet("background-color: transparent; \n"
                                            "border: none;")
         self.btnExcluirGrupo.setText("")
-        self.btnExcluirGrupo.setIcon(QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirGrupo.setIcon(QIcon("icons/2x/delete.png"))
         self.btnExcluirGrupo.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirGrupo.setObjectName("btnExcluirGrupo")
         self.horizontalLayout_5.addWidget(self.btnExcluirGrupo)
@@ -72,7 +70,7 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
         self.btnFecharGrupo.setStyleSheet("background-color: transparent; \n"
                                           "border: none;")
         self.btnFecharGrupo.setText("")
-        self.btnFecharGrupo.setIcon(QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharGrupo.setIcon(QIcon("icons/2x/close.png"))
         self.btnFecharGrupo.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharGrupo.setObjectName("btnFecharGrupo")
         self.horizontalLayout_5.addWidget(self.btnFecharGrupo)

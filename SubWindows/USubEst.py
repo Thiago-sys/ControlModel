@@ -3,8 +3,6 @@ from PyQt5.QtGui import QIcon
 from UCustomMessageBox import CustomMessageBox
 from UMovEstoqueDialog import MovEstoqueDialog
 from datetime import datetime
-import sys
-import os.path
 
 
 class SubWindowEstoque(QtWidgets.QWidget):
@@ -12,7 +10,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
         super().__init__()
 
         self.db = db
-        script_directory = sys.path[0]
+
         self.subEst = QtWidgets.QWidget()
         self.subEst.setObjectName("subEst")
         self.gridLayout = QtWidgets.QGridLayout(self.subEst)
@@ -101,7 +99,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.btnInserirEst.setStyleSheet("background-color: transparent; \n"
                                          "border: none;")
         self.btnInserirEst.setText("")
-        self.btnInserirEst.setIcon(QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirEst.setIcon(QIcon("icons/2x/insert.png"))
         self.btnInserirEst.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirEst.setObjectName("btnInserirEst")
         self.horizontalLayout_2.addWidget(self.btnInserirEst)
@@ -110,7 +108,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.btnEditarEst.setStyleSheet("background-color: transparent; \n"
                                         "border: none;")
         self.btnEditarEst.setText("")
-        self.btnEditarEst.setIcon(QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarEst.setIcon(QIcon("icons/2x/edit.png"))
         self.btnEditarEst.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarEst.setObjectName("btnEditarEst")
         self.horizontalLayout_2.addWidget(self.btnEditarEst)
@@ -119,7 +117,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.btnExcluirEst.setStyleSheet("background-color: transparent; \n"
                                          "border: none;")
         self.btnExcluirEst.setText("")
-        self.btnExcluirEst.setIcon(QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirEst.setIcon(QIcon("icons/2x/delete.png"))
         self.btnExcluirEst.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirEst.setObjectName("btnExcluirEst")
         self.horizontalLayout_2.addWidget(self.btnExcluirEst)
@@ -131,7 +129,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.btnFecharEst.setStyleSheet("background-color: transparent; \n"
                                         "border: none;")
         self.btnFecharEst.setText("")
-        self.btnFecharEst.setIcon(QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharEst.setIcon(QIcon("icons/2x/close.png"))
         self.btnFecharEst.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharEst.setObjectName("btnFecharEst")
         self.horizontalLayout_2.addWidget(self.btnFecharEst)

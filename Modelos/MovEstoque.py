@@ -9,8 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import sys
-import os.path
 
 
 class Ui_Dialog(object):
@@ -19,8 +17,7 @@ class Ui_Dialog(object):
         Dialog.resize(269, 345)
         Dialog.setMinimumSize(QtCore.QSize(0, 0))
         Dialog.setMaximumSize(QtCore.QSize(500, 500))
-        script_directory = sys.path[0]
-        Dialog.setWindowIcon(QtGui.QIcon(os.path.join(script_directory, "icons/painel-de-controle.png")))
+        Dialog.setWindowIcon(QtGui.QIcon("icons/painel-de-controle.png"))
         self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout.setContentsMargins(4, 4, 4, 4)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -196,7 +193,7 @@ class Ui_Dialog(object):
         self.btnGravar.setStyleSheet("background:transparent\n"
 "")
         self.btnGravar.setText("")
-        self.btnGravar.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/save.png")))
+        self.btnGravar.setIcon(QtGui.QIcon("icons/2x/save.png"))
         self.btnGravar.setIconSize(QtCore.QSize(48, 48))
         self.btnGravar.setObjectName("btnGravar")
         self.horizontalLayout.addWidget(self.btnGravar)
@@ -209,7 +206,7 @@ class Ui_Dialog(object):
         self.btnCancelar.setStyleSheet("background:transparent\n"
 "")
         self.btnCancelar.setText("")
-        self.btnCancelar.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/cancel.png")))
+        self.btnCancelar.setIcon(QtGui.QIcon("icons/2x/cancel.png"))
         self.btnCancelar.setIconSize(QtCore.QSize(48, 48))
         self.btnCancelar.setObjectName("btnCancelar")
         self.horizontalLayout.addWidget(self.btnCancelar)

@@ -9,16 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import sys
-import os.path
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
-        script_directory = sys.path[0]
-        MainWindow.setWindowIcon(QtGui.QIcon(os.path.join(script_directory, "icons/painel-de-controle.png")))
+        MainWindow.setWindowIcon(QtGui.QIcon("icons/painel-de-controle.png"))
         MainWindow.setIconSize(QtCore.QSize(30, 30))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -36,7 +33,7 @@ class Ui_MainWindow(object):
         self.btnLan.setFont(font)
         self.btnLan.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        self.btnLan.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/btnLan.png")))
+        self.btnLan.setIcon(QtGui.QIcon("icons/2x/btnLan.png"))
         self.btnLan.setIconSize(QtCore.QSize(48, 48))
         self.btnLan.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnLan.setObjectName("btnLan")
@@ -47,7 +44,7 @@ class Ui_MainWindow(object):
         self.btnEst.setFont(font)
         self.btnEst.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        self.btnEst.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/btnEst.png")))
+        self.btnEst.setIcon(QtGui.QIcon("icons/2x/btnEst.png"))
         self.btnEst.setIconSize(QtCore.QSize(48, 48))
         self.btnEst.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnEst.setObjectName("btnEst")
@@ -58,7 +55,7 @@ class Ui_MainWindow(object):
         self.btnItens.setFont(font)
         self.btnItens.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        self.btnItens.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/btnItens.png")))
+        self.btnItens.setIcon(QtGui.QIcon("icons/2x/btnItens.png"))
         self.btnItens.setIconSize(QtCore.QSize(48, 48))
         self.btnItens.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnItens.setObjectName("btnItens")
@@ -69,7 +66,7 @@ class Ui_MainWindow(object):
         self.btnGrpItens.setFont(font)
         self.btnGrpItens.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        self.btnGrpItens.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/btnGrpItens.png")))
+        self.btnGrpItens.setIcon(QtGui.QIcon("icons/2x/btnGrpItens.png"))
         self.btnGrpItens.setIconSize(QtCore.QSize(48, 48))
         self.btnGrpItens.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnGrpItens.setObjectName("btnGrpItens")
@@ -80,7 +77,7 @@ class Ui_MainWindow(object):
         self.btnClientes.setFont(font)
         self.btnClientes.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        self.btnClientes.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/btnClientes.png")))
+        self.btnClientes.setIcon(QtGui.QIcon("icons/2x/btnClientes.png"))
         self.btnClientes.setIconSize(QtCore.QSize(48, 48))
         self.btnClientes.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnClientes.setObjectName("btnClientes")
@@ -92,7 +89,7 @@ class Ui_MainWindow(object):
         self.btnFornecedores.setFont(font)
         self.btnFornecedores.setStyleSheet("background-color: transparent; \n"
 "border: none;")
-        self.btnFornecedores.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/btnFornecedores.png")))
+        self.btnFornecedores.setIcon(QtGui.QIcon("icons/2x/btnFornecedores.png"))
         self.btnFornecedores.setIconSize(QtCore.QSize(48, 48))
         self.btnFornecedores.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.btnFornecedores.setObjectName("btnFornecedores")
@@ -191,7 +188,7 @@ class Ui_MainWindow(object):
         self.btnInserirLan.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnInserirLan.setText("")
-        self.btnInserirLan.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirLan.setIcon(QtGui.QIcon("icons/2x/insert.png"))
         self.btnInserirLan.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirLan.setObjectName("btnInserirLan")
         self.horizontalLayout_6.addWidget(self.btnInserirLan)
@@ -200,7 +197,7 @@ class Ui_MainWindow(object):
         self.btnEditarLan.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnEditarLan.setText("")
-        self.btnInserirLan.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnInserirLan.setIcon(QtGui.QIcon("icons/2x/edit.png"))
         self.btnEditarLan.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarLan.setObjectName("btnEditarLan")
         self.horizontalLayout_6.addWidget(self.btnEditarLan)
@@ -209,7 +206,7 @@ class Ui_MainWindow(object):
         self.btnExcluirLan.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnExcluirLan.setText("")
-        self.btnInserirLan.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnInserirLan.setIcon(QtGui.QIcon("icons/2x/delete.png"))
         self.btnExcluirLan.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirLan.setObjectName("btnExcluirLan")
         self.horizontalLayout_6.addWidget(self.btnExcluirLan)
@@ -221,7 +218,7 @@ class Ui_MainWindow(object):
         self.btnFecharLan.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnFecharLan.setText("")
-        self.btnInserirLan.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnInserirLan.setIcon(QtGui.QIcon("icons/2x/close.png"))
         self.btnFecharLan.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharLan.setObjectName("btnFecharLan")
         self.horizontalLayout_6.addWidget(self.btnFecharLan)
@@ -310,7 +307,7 @@ class Ui_MainWindow(object):
         self.btnInserirEst.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnInserirEst.setText("")
-        self.btnInserirEst.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirEst.setIcon(QtGui.QIcon("icons/2x/insert.png"))
         self.btnInserirEst.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirEst.setObjectName("btnInserirEst")
         self.horizontalLayout_2.addWidget(self.btnInserirEst)
@@ -319,7 +316,7 @@ class Ui_MainWindow(object):
         self.btnEditarEst.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnEditarEst.setText("")
-        self.btnEditarEst.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarEst.setIcon(QtGui.QIcon("icons/2x/edit.png"))
         self.btnEditarEst.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarEst.setObjectName("btnEditarEst")
         self.horizontalLayout_2.addWidget(self.btnEditarEst)
@@ -328,7 +325,7 @@ class Ui_MainWindow(object):
         self.btnExcluirEst.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnExcluirEst.setText("")
-        self.btnExcluirEst.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirEst.setIcon(QtGui.QIcon("icons/2x/delete.png"))
         self.btnExcluirEst.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirEst.setObjectName("btnExcluirEst")
         self.horizontalLayout_2.addWidget(self.btnExcluirEst)
@@ -340,7 +337,7 @@ class Ui_MainWindow(object):
         self.btnFecharEst.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnFecharEst.setText("")
-        self.btnFecharEst.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharEst.setIcon(QtGui.QIcon("icons/2x/close.png"))
         self.btnFecharEst.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharEst.setObjectName("btnFecharEst")
         self.horizontalLayout_2.addWidget(self.btnFecharEst)
@@ -384,7 +381,7 @@ class Ui_MainWindow(object):
         self.btnInserirItens.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnInserirItens.setText("")
-        self.btnInserirItens.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirItens.setIcon(QtGui.QIcon("icons/2x/insert.png"))
         self.btnInserirItens.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirItens.setObjectName("btnInserirItens")
         self.horizontalLayout_4.addWidget(self.btnInserirItens)
@@ -393,7 +390,7 @@ class Ui_MainWindow(object):
         self.btnEditarItens.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnEditarItens.setText("")
-        self.btnEditarItens.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarItens.setIcon(QtGui.QIcon("icons/2x/edit.png"))
         self.btnEditarItens.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarItens.setObjectName("btnEditarItens")
         self.horizontalLayout_4.addWidget(self.btnEditarItens)
@@ -402,7 +399,7 @@ class Ui_MainWindow(object):
         self.btnExcluirItens.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnExcluirItens.setText("")
-        self.btnExcluirItens.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirItens.setIcon(QtGui.QIcon("icons/2x/delete.png"))
         self.btnExcluirItens.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirItens.setObjectName("btnExcluirItens")
         self.horizontalLayout_4.addWidget(self.btnExcluirItens)
@@ -414,7 +411,7 @@ class Ui_MainWindow(object):
         self.btnFecharItens.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnFecharItens.setText("")
-        self.btnFecharItens.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharItens.setIcon(QtGui.QIcon("icons/2x/close.png"))
         self.btnFecharItens.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharItens.setObjectName("btnFecharItens")
         self.horizontalLayout_4.addWidget(self.btnFecharItens)
@@ -447,7 +444,7 @@ class Ui_MainWindow(object):
         self.btnInserirGrupo.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnInserirGrupo.setText("")
-        self.btnInserirGrupo.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirGrupo.setIcon(QtGui.QIcon("icons/2x/insert.png"))
         self.btnInserirGrupo.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirGrupo.setObjectName("btnInserirGrupo")
         self.horizontalLayout_5.addWidget(self.btnInserirGrupo)
@@ -456,7 +453,7 @@ class Ui_MainWindow(object):
         self.btnEditarGrupo.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnEditarGrupo.setText("")
-        self.btnEditarGrupo.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarGrupo.setIcon(QtGui.QIcon("icons/2x/edit.png"))
         self.btnEditarGrupo.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarGrupo.setObjectName("btnEditarGrupo")
         self.horizontalLayout_5.addWidget(self.btnEditarGrupo)
@@ -465,7 +462,7 @@ class Ui_MainWindow(object):
         self.btnExcluirGrupo.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnExcluirGrupo.setText("")
-        self.btnExcluirGrupo.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirGrupo.setIcon(QtGui.QIcon("icons/2x/delete.png"))
         self.btnExcluirGrupo.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirGrupo.setObjectName("btnExcluirGrupo")
         self.horizontalLayout_5.addWidget(self.btnExcluirGrupo)
@@ -477,7 +474,7 @@ class Ui_MainWindow(object):
         self.btnFecharGrupo.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnFecharGrupo.setText("")
-        self.btnFecharGrupo.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharGrupo.setIcon(QtGui.QIcon("icons/2x/close.png"))
         self.btnFecharGrupo.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharGrupo.setObjectName("btnFecharGrupo")
         self.horizontalLayout_5.addWidget(self.btnFecharGrupo)
@@ -517,7 +514,7 @@ class Ui_MainWindow(object):
         self.btnInserirClientes.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnInserirClientes.setText("")
-        self.btnInserirClientes.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirClientes.setIcon(QtGui.QIcon("icons/2x/insert.png"))
         self.btnInserirClientes.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirClientes.setObjectName("btnInserirClientes")
         self.horizontalLayout_7.addWidget(self.btnInserirClientes)
@@ -526,7 +523,7 @@ class Ui_MainWindow(object):
         self.btnEditarClientes.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnEditarClientes.setText("")
-        self.btnEditarClientes.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarClientes.setIcon(QtGui.QIcon("icons/2x/edit.png"))
         self.btnEditarClientes.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarClientes.setObjectName("btnEditarClientes")
         self.horizontalLayout_7.addWidget(self.btnEditarClientes)
@@ -535,7 +532,7 @@ class Ui_MainWindow(object):
         self.btnExcluirClientes.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnExcluirClientes.setText("")
-        self.btnExcluirClientes.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirClientes.setIcon(QtGui.QIcon("icons/2x/delete.png"))
         self.btnExcluirClientes.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirClientes.setObjectName("btnExcluirClientes")
         self.horizontalLayout_7.addWidget(self.btnExcluirClientes)
@@ -547,7 +544,7 @@ class Ui_MainWindow(object):
         self.btnFecharClientes.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnFecharClientes.setText("")
-        self.btnFecharClientes.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharClientes.setIcon(QtGui.QIcon("icons/2x/close.png"))
         self.btnFecharClientes.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharClientes.setObjectName("btnFecharClientes")
         self.horizontalLayout_7.addWidget(self.btnFecharClientes)
@@ -589,7 +586,7 @@ class Ui_MainWindow(object):
         self.btnInserirFornecedores.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnInserirFornecedores.setText("")
-        self.btnInserirFornecedores.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirFornecedores.setIcon(QtGui.QIcon("icons/2x/insert.png"))
         self.btnInserirFornecedores.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirFornecedores.setObjectName("btnInserirFornecedores")
         self.horizontalLayout_8.addWidget(self.btnInserirFornecedores)
@@ -598,7 +595,7 @@ class Ui_MainWindow(object):
         self.btnEditarFornecedores.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnEditarFornecedores.setText("")
-        self.btnEditarFornecedores.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarFornecedores.setIcon(QtGui.QIcon("icons/2x/edit.png"))
         self.btnEditarFornecedores.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarFornecedores.setObjectName("btnEditarFornecedores")
         self.horizontalLayout_8.addWidget(self.btnEditarFornecedores)
@@ -607,7 +604,7 @@ class Ui_MainWindow(object):
         self.btnExcluirFornecedores.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnExcluirFornecedores.setText("")
-        self.btnExcluirFornecedores.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirFornecedores.setIcon(QtGui.QIcon("icons/2x/delete.png"))
         self.btnExcluirFornecedores.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirFornecedores.setObjectName("btnExcluirFornecedores")
         self.horizontalLayout_8.addWidget(self.btnExcluirFornecedores)
@@ -619,7 +616,7 @@ class Ui_MainWindow(object):
         self.btnFecharFornecedores.setStyleSheet("background-color: transparent; \n"
 "border: none;")
         self.btnFecharFornecedores.setText("")
-        self.btnFecharFornecedores.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharFornecedores.setIcon(QtGui.QIcon("icons/2x/close.png"))
         self.btnFecharFornecedores.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharFornecedores.setObjectName("btnFecharFornecedores")
         self.horizontalLayout_8.addWidget(self.btnFecharFornecedores)

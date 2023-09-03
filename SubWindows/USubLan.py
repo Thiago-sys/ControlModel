@@ -3,15 +3,13 @@ from PyQt5.QtGui import QIcon
 from UCadLanDialog import CadLanDialog
 from UCustomMessageBox import CustomMessageBox
 from datetime import datetime
-import sys
-import os.path
 
 
 class SubWindowLancamentos(QtWidgets.QWidget):
     def __init__(self, db):
         super().__init__()
         self.db = db
-        script_directory = sys.path[0]
+        
         self.subLan = QtWidgets.QWidget()
         self.subLan.setEnabled(True)
         self.subLan.setStyleSheet("")
@@ -71,7 +69,7 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         self.btnInserirLan.setStyleSheet("background-color: transparent; \n"
                                          "border: none;")
         self.btnInserirLan.setText("")
-        self.btnInserirLan.setIcon(QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInserirLan.setIcon(QIcon("icons/2x/insert.png"))
         self.btnInserirLan.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirLan.setObjectName("btnInserirLan")
         self.horizontalLayout_6.addWidget(self.btnInserirLan)
@@ -80,7 +78,7 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         self.btnEditarLan.setStyleSheet("background-color: transparent; \n"
                                         "border: none;")
         self.btnEditarLan.setText("")
-        self.btnEditarLan.setIcon(QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditarLan.setIcon(QIcon("icons/2x/edit.png"))
         self.btnEditarLan.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarLan.setObjectName("btnEditarLan")
         self.horizontalLayout_6.addWidget(self.btnEditarLan)
@@ -89,7 +87,7 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         self.btnExcluirLan.setStyleSheet("background-color: transparent; \n"
                                          "border: none;")
         self.btnExcluirLan.setText("")
-        self.btnExcluirLan.setIcon(QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnExcluirLan.setIcon(QIcon("icons/2x/delete.png"))
         self.btnExcluirLan.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirLan.setObjectName("btnExcluirLan")
         self.horizontalLayout_6.addWidget(self.btnExcluirLan)
@@ -101,7 +99,7 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         self.btnFecharLan.setStyleSheet("background-color: transparent; \n"
                                         "border: none;")
         self.btnFecharLan.setText("")
-        self.btnFecharLan.setIcon(QIcon(os.path.join(script_directory, "icons/2x/close.png")))
+        self.btnFecharLan.setIcon(QIcon("icons/2x/close.png"))
         self.btnFecharLan.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharLan.setObjectName("btnFecharLan")
         self.horizontalLayout_6.addWidget(self.btnFecharLan)

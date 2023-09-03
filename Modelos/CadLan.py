@@ -9,8 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import sys
-import os.path
 
 
 class Ui_Dialog(object):
@@ -24,8 +22,7 @@ class Ui_Dialog(object):
         Dialog.setSizePolicy(sizePolicy)
         Dialog.setMinimumSize(QtCore.QSize(400, 424))
         Dialog.setMaximumSize(QtCore.QSize(400, 424))
-        script_directory = sys.path[0]
-        Dialog.setWindowIcon(QtGui.QIcon(os.path.join(script_directory, "icons/painel-de-controle.png")))
+        Dialog.setWindowIcon(QtGui.QIcon("icons/painel-de-controle.png"))
         self.gridLayout_2 = QtWidgets.QGridLayout(Dialog)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.fraBotoes = QtWidgets.QFrame(Dialog)
@@ -45,8 +42,7 @@ class Ui_Dialog(object):
         self.btnGravar.setStyleSheet("background:transparent\n"
 "")
         self.btnGravar.setText("")
-        script_directory = sys.path[0]
-        self.btnGravar.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/painel-de-controle.png")))
+        self.btnGravar.setIcon(QtGui.QIcon("icons/2x/save.png"))
         self.btnGravar.setIconSize(QtCore.QSize(48, 48))
         self.btnGravar.setObjectName("btnGravar")
         self.horizontalLayout.addWidget(self.btnGravar)
@@ -59,7 +55,7 @@ class Ui_Dialog(object):
         self.btnCancelar.setStyleSheet("background:transparent\n"
 "")
         self.btnCancelar.setText("")
-        self.btnCancelar.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/cancel.png")))
+        self.btnCancelar.setIcon(QtGui.QIcon("icons/2x/cancel.png"))
         self.btnCancelar.setIconSize(QtCore.QSize(48, 48))
         self.btnCancelar.setObjectName("btnCancelar")
         self.horizontalLayout.addWidget(self.btnCancelar)
@@ -127,7 +123,7 @@ class Ui_Dialog(object):
         self.btnInsertVendas.setStyleSheet("background:transparent\n"
 "")
         self.btnInsertVendas.setText("")
-        self.btnInsertVendas.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInsertVendas.setIcon(QtGui.QIcon("icons/2x/insert.png"))
         self.btnInsertVendas.setIconSize(QtCore.QSize(24, 24))
         self.btnInsertVendas.setObjectName("btnInsertVendas")
         self.gridLayout_3.addWidget(self.btnInsertVendas, 0, 0, 1, 1)
@@ -137,7 +133,7 @@ class Ui_Dialog(object):
         self.btnEditVendas.setStyleSheet("background:transparent\n"
 "")
         self.btnEditVendas.setText("")
-        self.btnEditVendas.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditVendas.setIcon(QtGui.QIcon("icons/2x/edit.png"))
         self.btnEditVendas.setIconSize(QtCore.QSize(16, 16))
         self.btnEditVendas.setObjectName("btnEditVendas")
         self.gridLayout_3.addWidget(self.btnEditVendas, 1, 0, 1, 1)
@@ -147,7 +143,7 @@ class Ui_Dialog(object):
         self.btnDeleteVendas.setStyleSheet("background:transparent\n"
 "")
         self.btnDeleteVendas.setText("")
-        self.btnDeleteVendas.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnDeleteVendas.setIcon(QtGui.QIcon("icons/2x/delete.png"))
         self.btnDeleteVendas.setObjectName("btnDeleteVendas")
         self.gridLayout_3.addWidget(self.btnDeleteVendas, 2, 0, 1, 1)
         self.fraDtaVendas = QtWidgets.QFrame(self.tabVenda)
@@ -357,7 +353,7 @@ class Ui_Dialog(object):
         self.btnInsertCompras.setStyleSheet("background:transparent\n"
 "")
         self.btnInsertCompras.setText("")
-        self.btnInsertCompras.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
+        self.btnInsertCompras.setIcon(QtGui.QIcon("icons/2x/insert.png"))
         self.btnInsertCompras.setIconSize(QtCore.QSize(24, 24))
         self.btnInsertCompras.setObjectName("btnInsertCompras")
         self.gridLayout_4.addWidget(self.btnInsertCompras, 0, 0, 1, 1)
@@ -367,7 +363,7 @@ class Ui_Dialog(object):
         self.btnEditCompras.setStyleSheet("background:transparent\n"
 "")
         self.btnEditCompras.setText("")
-        self.btnEditCompras.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
+        self.btnEditCompras.setIcon(QtGui.QIcon("icons/2x/edit.png"))
         self.btnEditCompras.setIconSize(QtCore.QSize(16, 16))
         self.btnEditCompras.setObjectName("btnEditCompras")
         self.gridLayout_4.addWidget(self.btnEditCompras, 1, 0, 1, 1)
@@ -377,7 +373,7 @@ class Ui_Dialog(object):
         self.btnDeleteCompras.setStyleSheet("background:transparent\n"
 "")
         self.btnDeleteCompras.setText("")
-        self.btnDeleteCompras.setIcon(QtGui.QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
+        self.btnDeleteCompras.setIcon(QtGui.QIcon("icons/2x/delete.png"))
         self.btnDeleteCompras.setObjectName("btnDeleteCompras")
         self.gridLayout_4.addWidget(self.btnDeleteCompras, 2, 0, 1, 1)
         self.fraDtaCompras = QtWidgets.QFrame(self.tabCompra)
