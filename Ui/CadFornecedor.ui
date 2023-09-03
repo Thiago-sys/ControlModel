@@ -255,7 +255,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="edtEmail"/>
+       <widget class="QLineEdit" name="edtEmail">
+        <property name="maxLength">
+         <number>200</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -277,7 +281,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="edtEnd"/>
+       <widget class="QLineEdit" name="edtEnd">
+        <property name="maxLength">
+         <number>200</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -300,6 +308,9 @@
       </item>
       <item>
        <widget class="QLineEdit" name="edtNome">
+        <property name="maxLength">
+         <number>200</number>
+        </property>
         <property name="required" stdset="0">
          <bool>true</bool>
         </property>

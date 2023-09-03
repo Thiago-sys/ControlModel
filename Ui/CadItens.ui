@@ -71,6 +71,9 @@
       </item>
       <item>
        <widget class="QLineEdit" name="edtDescricao">
+        <property name="maxLength">
+         <number>100</number>
+        </property>
         <property name="required" stdset="0">
          <bool>true</bool>
         </property>

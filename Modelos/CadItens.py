@@ -33,6 +33,7 @@ class Ui_Dialog(object):
         self.lblDescricao.setObjectName("lblDescricao")
         self.verticalLayout.addWidget(self.lblDescricao)
         self.edtDescricao = QtWidgets.QLineEdit(self.fraDescricao)
+        self.edtDescricao.setMaxLength(100)
         self.edtDescricao.setProperty("required", True)
         self.edtDescricao.setObjectName("edtDescricao")
         self.verticalLayout.addWidget(self.edtDescricao)
