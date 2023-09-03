@@ -3,6 +3,8 @@ from PyQt5.QtGui import QIcon
 from UCadItensDialog import CadItensDialog
 from datetime import datetime
 from UCustomMessageBox import CustomMessageBox
+import sys
+import os.path
 
 
 class SubWindowItens(QtWidgets.QWidget):
@@ -10,7 +12,7 @@ class SubWindowItens(QtWidgets.QWidget):
         super().__init__()
 
         self.db = db
-
+        script_directory = sys.path[0]
         self.subItens = QtWidgets.QWidget()
         self.subItens.setObjectName("subItens")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.subItens)
@@ -52,7 +54,7 @@ class SubWindowItens(QtWidgets.QWidget):
         self.btnInserirItens.setStyleSheet("background-color: transparent; \n"
                                            "border: none;")
         self.btnInserirItens.setText("")
-        self.btnInserirItens.setIcon(QIcon("icons/2x/insert.png"))
+        self.btnInserirItens.setIcon(QIcon(os.path.join(script_directory, "icons/2x/insert.png")))
         self.btnInserirItens.setIconSize(QtCore.QSize(48, 48))
         self.btnInserirItens.setObjectName("btnInserirItens")
         self.horizontalLayout_4.addWidget(self.btnInserirItens)
@@ -61,7 +63,7 @@ class SubWindowItens(QtWidgets.QWidget):
         self.btnEditarItens.setStyleSheet("background-color: transparent; \n"
                                           "border: none;")
         self.btnEditarItens.setText("")
-        self.btnEditarItens.setIcon(QIcon("icons/2x/edit.png"))
+        self.btnEditarItens.setIcon(QIcon(os.path.join(script_directory, "icons/2x/edit.png")))
         self.btnEditarItens.setIconSize(QtCore.QSize(36, 36))
         self.btnEditarItens.setObjectName("btnEditarItens")
         self.horizontalLayout_4.addWidget(self.btnEditarItens)
@@ -70,7 +72,7 @@ class SubWindowItens(QtWidgets.QWidget):
         self.btnExcluirItens.setStyleSheet("background-color: transparent; \n"
                                            "border: none;")
         self.btnExcluirItens.setText("")
-        self.btnExcluirItens.setIcon(QIcon("icons/2x/delete.png"))
+        self.btnExcluirItens.setIcon(QIcon(os.path.join(script_directory, "icons/2x/delete.png")))
         self.btnExcluirItens.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirItens.setObjectName("btnExcluirItens")
         self.horizontalLayout_4.addWidget(self.btnExcluirItens)
@@ -82,7 +84,7 @@ class SubWindowItens(QtWidgets.QWidget):
         self.btnFecharItens.setStyleSheet("background-color: transparent; \n"
                                           "border: none;")
         self.btnFecharItens.setText("")
-        self.btnFecharItens.setIcon(QIcon("icons/2x/close.png"))
+        self.btnFecharItens.setIcon(QIcon(os.path.join(script_directory, "icons/2x/close.png")))
         self.btnFecharItens.setIconSize(QtCore.QSize(40, 40))
         self.btnFecharItens.setObjectName("btnFecharItens")
         self.horizontalLayout_4.addWidget(self.btnFecharItens)
