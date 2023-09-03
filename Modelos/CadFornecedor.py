@@ -113,6 +113,7 @@ class Ui_Dialog(object):
         self.lblEmail.setObjectName("lblEmail")
         self.verticalLayout_4.addWidget(self.lblEmail)
         self.edtEmail = QtWidgets.QLineEdit(self.fraEmail)
+        self.edtEmail.setMaxLength(200)
         self.edtEmail.setObjectName("edtEmail")
         self.verticalLayout_4.addWidget(self.edtEmail)
         self.gridLayout.addWidget(self.fraEmail, 2, 0, 1, 3)
