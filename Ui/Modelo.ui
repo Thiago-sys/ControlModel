@@ -13,6 +13,16 @@
   <property name="windowTitle">
    <string>Controle</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../icons/2_.qrc">
+    <normaloff>:/icons/painel-de-controle.png</normaloff>:/icons/painel-de-controle.png</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>30</width>
+    <height>30</height>
+   </size>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>

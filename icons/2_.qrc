@@ -1,15 +1,11 @@
 <RCC>
   <qresource prefix="icons">
+    <file>painel-de-controle.png</file>
     <file>2x/close.png</file>
     <file>2x/cancel.png</file>
-    <file>2x/client.png</file>
     <file>2x/delete.png</file>
     <file>2x/edit.png</file>
-    <file>2x/group.png</file>
     <file>2x/insert.png</file>
-    <file>2x/inventory.png</file>
-    <file>2x/itens.png</file>
-    <file>2x/lancamento.png</file>
     <file>2x/save.png</file>
   </qresource>
 </RCC>
