@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Ui\CadGrupos.ui'
+# Form implementation generated from reading ui file 'Ui/CadGrupos.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -15,6 +15,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(245, 149)
+        Dialog.setWindowIcon(QtGui.QIcon("icons/painel-de-controle.png"))
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.fraDescricao = QtWidgets.QFrame(Dialog)
@@ -75,5 +76,5 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Cadastro de Grupo"))
         self.lblDescricao.setText(_translate("Dialog", "Descrição"))

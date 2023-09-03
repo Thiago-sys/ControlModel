@@ -29,7 +29,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Lançamentos</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons/48px_.qrc">
+    <normaloff>:/icons/painel-de-controle.png</normaloff>:/icons/painel-de-controle.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="1" column="0">

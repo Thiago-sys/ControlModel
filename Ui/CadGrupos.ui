@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Cadastro de Grupo</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons/48px_.qrc">
+    <normaloff>:/icons/painel-de-controle.png</normaloff>:/icons/painel-de-controle.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>

@@ -17,6 +17,7 @@ class Ui_Dialog(object):
         Dialog.resize(402, 214)
         Dialog.setMinimumSize(QtCore.QSize(402, 214))
         Dialog.setMaximumSize(QtCore.QSize(402, 214))
+        Dialog.setWindowIcon(QtGui.QIcon("icons/painel-de-controle.png"))
         self.gridLayout = QtWidgets.QGridLayout(Dialog)
         self.gridLayout.setContentsMargins(4, 4, 4, 4)
         self.gridLayout.setHorizontalSpacing(4)
@@ -157,7 +158,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Cadastro de Item"))
         self.lblDescricao.setText(_translate("Dialog", "Descrição"))
         self.lblData.setText(_translate("Dialog", "Data da compra"))
         self.lblValor.setText(_translate("Dialog", "Valor"))

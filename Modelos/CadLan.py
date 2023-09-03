@@ -22,6 +22,7 @@ class Ui_Dialog(object):
         Dialog.setSizePolicy(sizePolicy)
         Dialog.setMinimumSize(QtCore.QSize(400, 424))
         Dialog.setMaximumSize(QtCore.QSize(400, 424))
+        Dialog.setWindowIcon(QtGui.QIcon("icons/painel-de-controle.png"))
         self.gridLayout_2 = QtWidgets.QGridLayout(Dialog)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.fraBotoes = QtWidgets.QFrame(Dialog)
@@ -435,7 +436,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Lançamentos"))
         self.lblCompVendas.setText(_translate("Dialog", "Complemento"))
         self.lbldtaVendas.setText(_translate("Dialog", "Data do lançamento"))
         item = self.gridLanVendas.horizontalHeaderItem(0)

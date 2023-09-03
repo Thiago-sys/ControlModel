@@ -15,6 +15,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(305, 196)
+        Dialog.setWindowIcon(QtGui.QIcon("icons/painel-de-controle.png"))
         self.gridLayout = QtWidgets.QGridLayout(Dialog)
         self.gridLayout.setObjectName("gridLayout")
         self.fraQntd = QtWidgets.QFrame(Dialog)
@@ -110,7 +111,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Partidas"))
         self.lblQntd.setText(_translate("Dialog", "Quantidade"))
         self.lblVlr.setText(_translate("Dialog", "Valor"))
         self.dblValor.setPrefix(_translate("Dialog", "R$ "))

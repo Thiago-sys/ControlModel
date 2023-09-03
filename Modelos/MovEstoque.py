@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Ui\MovEstoque.ui'
+# Form implementation generated from reading ui file 'Ui/MovEstoque.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -17,6 +17,7 @@ class Ui_Dialog(object):
         Dialog.resize(269, 345)
         Dialog.setMinimumSize(QtCore.QSize(0, 0))
         Dialog.setMaximumSize(QtCore.QSize(500, 500))
+        Dialog.setWindowIcon(QtGui.QIcon("icons/painel-de-controle.png"))
         self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout.setContentsMargins(4, 4, 4, 4)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -205,7 +206,7 @@ class Ui_Dialog(object):
         self.btnCancelar.setStyleSheet("background:transparent\n"
 "")
         self.btnCancelar.setText("")
-        self.btnCancelar.setIcon(QtGui.QIcon("C:/Users/thiag/PycharmProjects/ControlModel/icons/2x/cancel.png"))
+        self.btnCancelar.setIcon(QtGui.QIcon("icons/2x/cancel.png"))
         self.btnCancelar.setIconSize(QtCore.QSize(48, 48))
         self.btnCancelar.setObjectName("btnCancelar")
         self.horizontalLayout.addWidget(self.btnCancelar)
@@ -219,7 +220,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Movimentação de Estoque"))
         self.lblDataEntrada.setText(_translate("Dialog", "Data:"))
         self.lblFornecedor.setText(_translate("Dialog", "Fornecedor"))
         self.lblItemEntrada.setText(_translate("Dialog", "Item"))

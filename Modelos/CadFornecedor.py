@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Ui\CadFornecedor.ui'
+# Form implementation generated from reading ui file 'Ui/CadFornecedor.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -17,6 +17,7 @@ class Ui_Dialog(object):
         Dialog.resize(345, 354)
         Dialog.setMinimumSize(QtCore.QSize(345, 354))
         Dialog.setMaximumSize(QtCore.QSize(345, 354))
+        Dialog.setWindowIcon(QtGui.QIcon("icons/painel-de-controle.png"))
         self.gridLayout = QtWidgets.QGridLayout(Dialog)
         self.gridLayout.setObjectName("gridLayout")
         self.fraTipo = QtWidgets.QFrame(Dialog)
@@ -152,7 +153,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Cadastro de Fornecedor"))
         self.rdgCPF.setText(_translate("Dialog", "CPF"))
         self.rdgCNPJ.setText(_translate("Dialog", "CNPJ"))
         self.lblIns.setText(_translate("Dialog", "CPF"))
