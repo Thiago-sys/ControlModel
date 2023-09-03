@@ -49,6 +49,7 @@ class Ui_Dialog(object):
         self.dblValor.setProperty("showGroupSeparator", True)
         self.dblValor.setDecimals(2)
         self.dblValor.setMaximum(999999.99)
+        self.dblValor.setProperty("required", True)
         self.dblValor.setObjectName("dblValor")
         self.verticalLayout_3.addWidget(self.dblValor)
         self.gridLayout.addWidget(self.fraVlr, 1, 1, 1, 1)

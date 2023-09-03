@@ -472,6 +472,9 @@
              <property name="calendarPopup">
               <bool>true</bool>
              </property>
+             <property name="required" stdset="0">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
           </layout>
@@ -1192,6 +1195,9 @@
               <enum>QAbstractSpinBox::NoButtons</enum>
              </property>
              <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+             <property name="required" stdset="0">
               <bool>true</bool>
              </property>
             </widget>

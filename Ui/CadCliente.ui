@@ -43,7 +43,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="edtNome"/>
+       <widget class="QLineEdit" name="edtNome">
+        <property name="Required" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -71,6 +75,9 @@
         </property>
         <property name="text">
          <string>..-</string>
+        </property>
+        <property name="required" stdset="0">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
