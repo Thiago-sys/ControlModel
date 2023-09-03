@@ -193,7 +193,7 @@ class Ui_Dialog(object):
         self.btnGravar.setStyleSheet("background:transparent\n"
 "")
         self.btnGravar.setText("")
-        self.btnGravar.setIcon(QtGui.QIcon("C:/Users/thiag/PycharmProjects/ControlModel/icons/2x/save.png"))
+        self.btnGravar.setIcon(QtGui.QIcon("icons/2x/save.png"))
         self.btnGravar.setIconSize(QtCore.QSize(48, 48))
         self.btnGravar.setObjectName("btnGravar")
         self.horizontalLayout.addWidget(self.btnGravar)
