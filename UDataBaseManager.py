@@ -1,13 +1,9 @@
 import mysql.connector
+import os
 
 class DatabaseManager:
-    def __init__(self, host, user, password, database):
-        self.connection = mysql.connector.connect(
-            host=host,
-            user=user,
-            password=password,
-            database=database
-        )
+    def __init__(self):
+        self.connection = mysql.connector.connect(option_files=os.path.expanduser('Control.my.cnf'))
         self.cursor = self.connection.cursor()
 
     def execute_query(self, query, values=None):

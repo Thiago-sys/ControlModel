@@ -33,12 +33,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.showMaximized()
 
-        self.database_manager = DatabaseManager(
-            host='localhost',
-            user='root',
-            password='masterkey',
-            database='control'
-        )
+        self.database_manager = DatabaseManager()
 
         self.data = QLabel()
         self.data.setStyleSheet("font-size: 13px; padding-left: 20px;")
@@ -112,7 +107,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def backup(self):
         try:
-            print("Iniciando backup")
             # Nome do arquivo de backup (inclui a data e hora atual)
             data_hora_atual = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
             arquivo_backup = f"backup_{data_hora_atual}.sql"
@@ -121,7 +115,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             caminho_backup = os.path.join(os.getcwd(), arquivo_backup)
 
             # Comando para fazer o backup usando o utilitário mysqldump
-            comando_backup = fr'"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqldump" --host=localhost --user=root --password=masterkey control > {caminho_backup}'
+            comando_backup = fr'"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqldump" --defaults-extra-file=Backup.my.cnf > {caminho_backup}'
 
             # Execute o comando de backup
             os.system(comando_backup)
@@ -129,12 +123,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # Copie o arquivo de backup para a pasta de destino
             pasta_destino = r'C:\Users\thiag\Google Drive\Backup'
             shutil.copy(caminho_backup, os.path.join(pasta_destino, arquivo_backup))
+            # Agora, exclua o arquivo de backup da pasta inicial
+            os.remove(caminho_backup)
         except Exception as e:
             CustomMessageBox("Erro", f"Ocorreu um erro durante o backup dos dados: \n {str(e)}").error.exec_()
 
     def agendar_backup(self):
-        schedule.every().day.at("15:00").do(self.backup)
-        threading.Thread(target=self.run_backup_thread).start()
+        schedule.every(1).second.do(self.backup)
+        self.backup_thread = threading.Thread(target=self.run_backup_thread)
+        self.backup_thread.daemon = True
+        self.backup_thread.start()
 
     def run_backup_thread(self):
         while True:
