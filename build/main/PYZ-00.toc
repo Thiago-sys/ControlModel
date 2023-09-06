@@ -720,6 +720,10 @@
   ('runpy',
    'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\runpy.py',
    'PYMODULE'),
+  ('schedule',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\schedule\\__init__.py',
+   'PYMODULE'),
   ('secrets',
    'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\secrets.py',
    'PYMODULE'),

@@ -48,87 +48,27 @@
   ('main',
    'C:\\Users\\thiag\\PycharmProjects\\ControlModel\\main.py',
    'PYSOURCE'),
-  ('VCRUNTIME140.dll',
-   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140.dll',
-   'BINARY'),
   ('python311.dll',
    'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\python311.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\plugins\\imageformats\\qsvg.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qsvg.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\generic\\qtuiotouchplugin.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\generic\\qtuiotouchplugin.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qwbmp.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qwbmp.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\bin\\libGLESv2.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libGLESv2.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\bin\\libEGL.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libEGL.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\platforms\\qwebgl.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qwebgl.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qtiff.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qtiff.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
-   'BINARY'),
   ('PyQt5\\Qt5\\plugins\\imageformats\\qtga.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qtga.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\plugins\\styles\\qwindowsvistastyle.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
@@ -138,11 +78,74 @@
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\opengl32sw.dll',
    'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qwebgl.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qwebgl.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\libGLESv2.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libGLESv2.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\generic\\qtuiotouchplugin.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\generic\\qtuiotouchplugin.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\libEGL.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libEGL.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qtiff.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qtiff.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qwbmp.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qwbmp.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
+   'BINARY'),
   ('select.pyd',
    'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\select.pyd',
    'EXTENSION'),
-  ('_hashlib.pyd',
-   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_hashlib.pyd',
+  ('pyexpat.pyd',
+   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('_ssl.pyd',
+   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_ssl.pyd',
    'EXTENSION'),
   ('_lzma.pyd',
    'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_lzma.pyd',
@@ -150,11 +153,8 @@
   ('_bz2.pyd',
    'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_bz2.pyd',
    'EXTENSION'),
-  ('pyexpat.pyd',
-   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\pyexpat.pyd',
-   'EXTENSION'),
-  ('_ssl.pyd',
-   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_ssl.pyd',
+  ('_hashlib.pyd',
+   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_hashlib.pyd',
    'EXTENSION'),
   ('_decimal.pyd',
    'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_decimal.pyd',
@@ -209,17 +209,16 @@
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Svg.dll',
    'BINARY'),
+  ('VCRUNTIME140_1.dll',
+   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5Widgets.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Widgets.dll',
+   'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5Network.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Network.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\bin\\VCRUNTIME140_1.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\VCRUNTIME140_1.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\bin\\MSVCP140.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\MSVCP140.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5WebSockets.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
@@ -229,22 +228,23 @@
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Quick.dll',
    'BINARY'),
+  ('PyQt5\\Qt5\\bin\\MSVCP140.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\MSVCP140.dll',
+   'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5DBus.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5DBus.dll',
    'BINARY'),
-  ('VCRUNTIME140_1.dll',
-   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140_1.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\bin\\Qt5Widgets.dll',
+  ('PyQt5\\Qt5\\bin\\VCRUNTIME140_1.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Widgets.dll',
-   'BINARY'),
-  ('libcrypto-1_1.dll',
-   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\libcrypto-1_1.dll',
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\VCRUNTIME140_1.dll',
    'BINARY'),
   ('libssl-1_1.dll',
    'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\libssl-1_1.dll',
+   'BINARY'),
+  ('libcrypto-1_1.dll',
+   'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\libcrypto-1_1.dll',
    'BINARY'),
   ('libffi-8.dll',
    'C:\\Users\\thiag\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\libffi-8.dll',
@@ -260,324 +260,324 @@
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\MSVCP140_1.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\bin\\Qt5Qml.dll',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Qml.dll',
-   'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5QmlModels.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5QmlModels.dll',
    'BINARY'),
-  ('libcrypto-3-x64.dll',
+  ('PyQt5\\Qt5\\bin\\Qt5Qml.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\libcrypto-3-x64.dll',
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Qml.dll',
    'BINARY'),
   ('libssl-3-x64.dll',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\libssl-3-x64.dll',
    'BINARY'),
+  ('libcrypto-3-x64.dll',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\libcrypto-3-x64.dll',
+   'BINARY'),
   ('base_library.zip',
    'C:\\Users\\thiag\\PycharmProjects\\ControlModel\\build\\main\\base_library.zip',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_fr.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fr.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_en.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_en.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qtbase_lv.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_lv.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_hu.qm',
+  ('PyQt5\\Qt5\\translations\\qt_help_ca.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_hu.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_ko.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ko.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_en.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_en.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_hu.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_hu.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_pl.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_pl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_uk.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_uk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_zh_TW.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_zh_TW.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_it.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_it.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_en.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_en.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_cs.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_cs.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_ko.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ko.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_cs.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_cs.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_bg.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_bg.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_sv.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sv.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_gd.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_gd.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_fa.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fa.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_gl.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_gl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_de.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_de.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_da.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_da.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_fi.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fi.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_gd.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_gd.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_fi.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fi.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_sk.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_hu.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_hu.qm',
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ca.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_ar.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ar.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_tr.qm',
+  ('PyQt5\\Qt5\\translations\\qtbase_cs.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_tr.qm',
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_cs.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_ru.qm',
+  ('PyQt5\\Qt5\\translations\\qt_cs.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ru.qm',
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_cs.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_da.qm',
+  ('PyQt5\\Qt5\\translations\\qt_help_de.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_da.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_lt.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lt.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_gl.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_gl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_es.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_es.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_da.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_da.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_it.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_it.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_it.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_it.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_ar.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ar.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_ja.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ja.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_ko.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ko.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_ja.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ja.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_ca.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ca.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_bg.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_bg.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_ca.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ca.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_he.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_he.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_de.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_de.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_fr.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fr.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_lv.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lv.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_ru.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ru.qm',
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_de.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_zh_TW.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_zh_TW.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
+  ('PyQt5\\Qt5\\translations\\qtbase_uk.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_cs.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_cs.qm',
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_uk.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_bg.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_bg.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_ar.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ar.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_zh_CN.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_zh_CN.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_tr.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_tr.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_he.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_he.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_sl.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_es.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_es.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_ru.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ru.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_pt.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_pt.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_sk.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_de.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_de.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_tr.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_tr.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_es.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_es.qm',
-   'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_help_fr.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_fr.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_sl.qm',
+  ('PyQt5\\Qt5\\translations\\qt_sv.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_uk.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_uk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_ja.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ja.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_pl.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_pl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_uk.qm',
-   'E:\\JetBrains\\PyCharm Community Edition '
-   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_uk.qm',
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sv.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_pl.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_pl.qm',
    'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_es.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_es.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_gl.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_gl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_lv.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lv.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ja.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ja.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_cs.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_cs.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_en.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_uk.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_uk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_fi.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fi.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_fr.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_hu.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_hu.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_sk.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_gd.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_gd.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_fa.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fa.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_fi.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fi.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ko.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ko.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_gd.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_gd.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_bg.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_bg.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_tr.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_tr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_es.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_es.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_gl.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_gl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_sk.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_de.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_de.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_hu.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_hu.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_bg.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_bg.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ko.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ko.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_uk.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_uk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ar.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ar.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_en.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_fr.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fr.qm',
+   'DATA'),
   ('PyQt5\\Qt5\\translations\\qtbase_sk.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_sk.qm',
    'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_it.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_it.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ru.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ru.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_tr.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_tr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_sl.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_he.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_he.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_it.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_it.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ja.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ja.qm',
+   'DATA'),
   ('PyQt5\\Qt5\\translations\\qtbase_ca.qm',
    'E:\\JetBrains\\PyCharm Community Edition '
    '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ca.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_es.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_es.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_sl.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_tr.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_tr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_en.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ja.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ja.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_da.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ca.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ca.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_de.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_de.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_da.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_zh_CN.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_zh_CN.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_pl.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_pl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_pt.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_pt.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_hu.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_hu.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_lt.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lt.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ru.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ru.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_da.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_zh_TW.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_zh_TW.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_he.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_he.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_it.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_it.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ar.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ar.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_pl.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_pl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ru.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ru.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ko.qm',
+   'E:\\JetBrains\\PyCharm Community Edition '
+   '2023.1\\ControlModel\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ko.qm',
    'DATA')],
  False,
  False,
