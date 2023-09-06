@@ -10,6 +10,13 @@ from SubWindows.USubGrpItens import SubWindowGrupoItens
 from SubWindows.USubClientes import SubWindowClientes
 from SubWindows.USubFornecedores import SubWindowFornecedores
 from UDataBaseManager import DatabaseManager
+import schedule
+import os
+import time
+import shutil
+from datetime import datetime
+from UCustomMessageBox import CustomMessageBox
+import threading
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -43,6 +50,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer = QtCore.QTimer(self)
         self.timer.timeout.connect(self.update_date_time)
         self.timer.start(1000)  # Update every 1 second
+
+        self.agendar_backup()
 
     def mostrarSubLancamentos(self):
         self.fecharSubWindow()
@@ -101,6 +110,36 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         formatted_date_time = current_date_time.toString("dd/MM/yyyy hh:mm:ss")
         self.data.setText("Data: " + formatted_date_time)
 
+    def backup(self):
+        try:
+            print("Iniciando backup")
+            # Nome do arquivo de backup (inclui a data e hora atual)
+            data_hora_atual = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+            arquivo_backup = f"backup_{data_hora_atual}.sql"
+
+            # Caminho completo para o arquivo de backup
+            caminho_backup = os.path.join(os.getcwd(), arquivo_backup)
+
+            # Comando para fazer o backup usando o utilitário mysqldump
+            comando_backup = fr'"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqldump" --host=localhost --user=root --password=masterkey control > {caminho_backup}'
+
+            # Execute o comando de backup
+            os.system(comando_backup)
+
+            # Copie o arquivo de backup para a pasta de destino
+            pasta_destino = r'C:\Users\thiag\Google Drive\Backup'
+            shutil.copy(caminho_backup, os.path.join(pasta_destino, arquivo_backup))
+        except Exception as e:
+            CustomMessageBox("Erro", f"Ocorreu um erro durante o backup dos dados: \n {str(e)}").error.exec_()
+
+    def agendar_backup(self):
+        schedule.every().day.at("15:00").do(self.backup)
+        threading.Thread(target=self.run_backup_thread).start()
+
+    def run_backup_thread(self):
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
