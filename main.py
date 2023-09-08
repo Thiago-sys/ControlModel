@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import QDateTime, Qt
+from PyQt5.QtCore import QDateTime
 from Modelos.Modelo import Ui_MainWindow
 from SubWindows.USubLan import SubWindowLancamentos
 from SubWindows.USubEst import SubWindowEstoque
@@ -17,6 +17,8 @@ import shutil
 from datetime import datetime
 from UCustomMessageBox import CustomMessageBox
 import threading
+from UMesAnoDialog import MesAnoDialog
+from UMesAno import MesAno
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -46,11 +48,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer.timeout.connect(self.update_date_time)
         self.timer.start(1000)  # Update every 1 second
 
+        # Crie um widget contêiner
+        container = QFrame()
+        # Crie um layout horizontal para o contêiner
+        layout = QHBoxLayout(container)
+        layout.setContentsMargins(0, 0, 0, 0)
+
+        self.lblMesAno = QLabel()
+        self.lblMesAno.setText('Mês/Ano')
+        self.btnMesAno = QPushButton()
+        self.btnMesAno.setFixedSize(100, 22)
+        self.btnMesAno.clicked.connect(self.selectMesAno)
+
+        layout.addWidget(self.lblMesAno)
+        layout.addWidget(self.btnMesAno)
+
+        self.statusbar.addWidget(container)
+
         self.agendar_backup()
+
 
     def mostrarSubLancamentos(self):
         self.fecharSubWindow()
-        subLan = SubWindowLancamentos(self.database_manager)
+        subLan = SubWindowLancamentos(self.database_manager, mes_ano)
         sub_window_lancamentos = subLan.get()
         subLan.btnFecharLan.clicked.connect(self.fecharSubWindow)
         self.mdiArea.addSubWindow(sub_window_lancamentos)
@@ -58,7 +78,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def mostrarSubEstoque(self):
         self.fecharSubWindow()
-        subEst = SubWindowEstoque(self.database_manager)
+        subEst = SubWindowEstoque(self.database_manager, mes_ano)
         sub_window_estoque = subEst.get()
         subEst.btnFecharEst.clicked.connect(self.fecharSubWindow)
         self.mdiArea.addSubWindow(sub_window_estoque)
@@ -129,7 +149,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             CustomMessageBox("Erro", f"Ocorreu um erro durante o backup dos dados: \n {str(e)}").error.exec_()
 
     def agendar_backup(self):
-        schedule.every(1).second.do(self.backup)
+        schedule.every().day.at("15:00").do(self.backup)
         self.backup_thread = threading.Thread(target=self.run_backup_thread)
         self.backup_thread.daemon = True
         self.backup_thread.start()
@@ -139,8 +159,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             schedule.run_pending()
             time.sleep(1)
 
+    def selectMesAno(self):
+        posicao = self.btnMesAno.mapToGlobal(self.btnMesAno.pos())
+        dialogMesAno = MesAnoDialog(mes_ano)
+        dialogMesAno.setGeometry(int(posicao.x() - dialogMesAno.width() / 2), posicao.y() - dialogMesAno.height(), dialogMesAno.width(), dialogMesAno.height())
+        dialogMesAno.exec_()
+
+        if dialogMesAno.accepted:
+            mes = str(mes_ano.get_mes())
+            ano = str(mes_ano.get_ano())
+            self.btnMesAno.setText(mes + "/" + ano)
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    mes_ano = MesAno()
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())

@@ -6,10 +6,11 @@ from datetime import datetime
 
 
 class SubWindowLancamentos(QtWidgets.QWidget):
-    def __init__(self, db):
+    def __init__(self, db, mes_ano):
         super().__init__()
         self.db = db
-        
+        self.mes_ano = mes_ano
+
         self.subLan = QtWidgets.QWidget()
         self.subLan.setEnabled(True)
         self.subLan.setStyleSheet("")
@@ -260,8 +261,10 @@ class SubWindowLancamentos(QtWidgets.QWidget):
                 "I.DSCITE, L.QTDITE, L.CODCLI, C.DSCCLI, L.CODFOR, F.DSCFOR, L.COMLAN, L.GRPLAN                    " \
                 "FROM TBLLAN L LEFT JOIN TBLITE I ON L.CODITE = I.CODITE                                           " \
                 "              LEFT JOIN TBLCLI C ON L.CODCLI = C.CODCLI                                           " \
-                "              LEFT JOIN TBLFOR F ON L.CODFOR = F.CODFOR                                           "
-        data = self.db.fetch_data(query)
+                "              LEFT JOIN TBLFOR F ON L.CODFOR = F.CODFOR                                           " \
+                "WHERE MONTH(L.DTALAN) = %s AND YEAR(L.DTALAN) = %s                                                "
+        values = (self.mes_ano.get_mes(), self.mes_ano.get_ano())
+        data = self.db.fetch_data(query, values)
 
         # Preencher a gridLan com os dados recuperados
         gridLan.setRowCount(len(data))

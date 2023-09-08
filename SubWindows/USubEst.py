@@ -6,10 +6,11 @@ from datetime import datetime
 
 
 class SubWindowEstoque(QtWidgets.QWidget):
-    def __init__(self, db):
+    def __init__(self, db, mes_ano):
         super().__init__()
 
         self.db = db
+        self.mes_ano = mes_ano
 
         self.subEst = QtWidgets.QWidget()
         self.subEst.setObjectName("subEst")
@@ -270,12 +271,14 @@ class SubWindowEstoque(QtWidgets.QWidget):
 
     def buscarDados(self):
         # Consulta à tabela TBLMOVEST usando a classe DatabaseManager
-        query = "SELECT M.CODMOVEST, M.DTAMOV, IF(M.NATMOV = 'C', 'Entrada', 'Saída') AS NATUREZA, M.CODITE, I.DSCITE," \
-                "M.QTD, M.CODCLI, C.DSCCLI, M.CODFOR, F.DSCFOR, M.COMMOV                                              " \
+        query = "SELECT M.CODMOVEST, M.DTAMOV, IF(M.NATMOV = 'C', 'Entrada', 'Saída') AS NATUREZA, M.CODITE,          " \
+                "I.DSCITE, M.QTD, M.CODCLI, C.DSCCLI, M.CODFOR, F.DSCFOR, M.COMMOV                                    " \
                 "FROM TBLMOVEST M LEFT JOIN TBLITE I ON M.CODITE = I.CODITE                                           " \
                 "                 LEFT JOIN TBLCLI C ON M.CODCLI = C.CODCLI                                           " \
-                "                 LEFT JOIN TBLFOR F ON M.CODFOR = F.CODFOR                                           "
-        data = self.db.fetch_data(query)
+                "                 LEFT JOIN TBLFOR F ON M.CODFOR = F.CODFOR                                           " \
+                "WHERE MONTH(M.DTAMOV) = %s AND YEAR(L.DTAMOV) = %s                                                   "
+        values = (self.mes_ano.get_mes(), self.mes_ano.get_ano())
+        data = self.db.fetch_data(query, values)
 
         # Preencher a gridLan com os dados recuperados
         self.gridMovEst.setRowCount(len(data))
