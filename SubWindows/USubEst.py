@@ -276,7 +276,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
                 "FROM TBLMOVEST M LEFT JOIN TBLITE I ON M.CODITE = I.CODITE                                           " \
                 "                 LEFT JOIN TBLCLI C ON M.CODCLI = C.CODCLI                                           " \
                 "                 LEFT JOIN TBLFOR F ON M.CODFOR = F.CODFOR                                           " \
-                "WHERE MONTH(M.DTAMOV) = %s AND YEAR(L.DTAMOV) = %s                                                   "
+                "WHERE MONTH(M.DTAMOV) = %s AND YEAR(M.DTAMOV) = %s                                                   "
         values = (self.mes_ano.get_mes(), self.mes_ano.get_ano())
         data = self.db.fetch_data(query, values)
 
