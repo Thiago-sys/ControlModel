@@ -1,24 +1,26 @@
-import sys
-from PyQt5 import QtCore
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import QDateTime
-from Modelos.Modelo import Ui_MainWindow
-from SubWindows.USubLan import SubWindowLancamentos
-from SubWindows.USubEst import SubWindowEstoque
-from SubWindows.USubItens import SubWindowItens
-from SubWindows.USubGrpItens import SubWindowGrupoItens
-from SubWindows.USubClientes import SubWindowClientes
-from SubWindows.USubFornecedores import SubWindowFornecedores
-from UDataBaseManager import DatabaseManager
-import schedule
 import os
-import time
 import shutil
-from datetime import datetime
-from UCustomMessageBox import CustomMessageBox
+import sys
 import threading
-from UMesAnoDialog import MesAnoDialog
+import time
+from datetime import datetime
+
+import schedule
+from PyQt5 import QtCore
+from PyQt5.QtCore import QDateTime
+from PyQt5.QtWidgets import *
+
+from Modelos.Modelo import Ui_MainWindow
+from SubWindows.USubClientes import SubWindowClientes
+from SubWindows.USubEst import SubWindowEstoque
+from SubWindows.USubFornecedores import SubWindowFornecedores
+from SubWindows.USubGrpItens import SubWindowGrupoItens
+from SubWindows.USubItens import SubWindowItens
+from SubWindows.USubLan import SubWindowLancamentos
+from UCustomMessageBox import CustomMessageBox
+from UDataBaseManager import DatabaseManager
 from UMesAno import MesAno
+from UMesAnoDialog import MesAnoDialog
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -141,7 +143,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             os.system(comando_backup)
 
             # Copie o arquivo de backup para a pasta de destino
-            pasta_destino = r'C:\Users\thiag\Google Drive\Backup'
+            user_home_dir = os.path.expanduser("~")
+            pasta_destino = os.path.join(user_home_dir, 'Google Drive', 'Backup')
             shutil.copy(caminho_backup, os.path.join(pasta_destino, arquivo_backup))
             # Agora, exclua o arquivo de backup da pasta inicial
             os.remove(caminho_backup)
