@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QDialog
-from PyQt5 import QtWidgets
+from PyQt6.QtWidgets import QDialog
+from PyQt6 import QtWidgets
 from Modelos.MovEstoque import Ui_Dialog
 from UDataBaseManager import DatabaseManager
 from UCustomMessageBox import CustomMessageBox

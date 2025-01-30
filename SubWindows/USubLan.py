@@ -1,5 +1,5 @@
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import QIcon
+from PyQt6 import QtCore, QtWidgets
+from PyQt6.QtGui import QIcon
 from UCadLanDialog import CadLanDialog
 from UCustomMessageBox import CustomMessageBox
 from datetime import datetime
@@ -60,7 +60,7 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         self.verticalLayout_2.addWidget(self.gridLan)
         self.fraBotoesLan = QtWidgets.QFrame(self.subLan)
         self.fraBotoesLan.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.fraBotoesLan.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.fraBotoesLan.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.fraBotoesLan.setObjectName("fraBotoesLan")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.fraBotoesLan)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
@@ -92,7 +92,7 @@ class SubWindowLancamentos(QtWidgets.QWidget):
         self.btnExcluirLan.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirLan.setObjectName("btnExcluirLan")
         self.horizontalLayout_6.addWidget(self.btnExcluirLan)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem1)
         self.btnFecharLan = QtWidgets.QPushButton(self.fraBotoesLan)
         self.btnFecharLan.setMinimumSize(QtCore.QSize(48, 48))

@@ -1,8 +1,8 @@
 from Modelos.Partida import Ui_Dialog
-from PyQt5.QtWidgets import QDialog
-from PyQt5.QtGui import QIcon
+from PyQt6.QtWidgets import QDialog
+from PyQt6.QtGui import QIcon
 from UDataBaseManager import DatabaseManager
-from PyQt5 import QtWidgets
+from PyQt6 import QtWidgets
 from UCustomMessageBox import CustomMessageBox
 
 

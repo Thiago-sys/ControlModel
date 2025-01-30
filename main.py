@@ -5,10 +5,9 @@ import threading
 import time
 from datetime import datetime
 
-import schedule
-from PyQt5 import QtCore
-from PyQt5.QtCore import QDateTime
-from PyQt5.QtWidgets import *
+from PyQt6 import QtCore
+from PyQt6.QtCore import QDateTime
+from PyQt6.QtWidgets import *
 
 from Modelos.Modelo import Ui_MainWindow
 from SubWindows.USubClientes import SubWindowClientes
@@ -152,14 +151,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             CustomMessageBox("Erro", f"Ocorreu um erro durante o backup dos dados: \n {str(e)}").error.exec_()
 
     def agendar_backup(self):
-        schedule.every().day.at("15:00").do(self.backup)
         self.backup_thread = threading.Thread(target=self.run_backup_thread)
         self.backup_thread.daemon = True
         self.backup_thread.start()
 
     def run_backup_thread(self):
         while True:
-            schedule.run_pending()
             time.sleep(1)
 
     def selectMesAno(self):

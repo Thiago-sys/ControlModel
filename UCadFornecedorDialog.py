@@ -1,8 +1,8 @@
-from PyQt5.QtWidgets import QDialog
+from PyQt6.QtWidgets import QDialog
 from Modelos.CadFornecedor import Ui_Dialog
 from UDataBaseManager import DatabaseManager
 from UCustomMessageBox import CustomMessageBox
-from PyQt5 import QtWidgets
+from PyQt6 import QtWidgets
 
 
 class CadFornecedorDialog(QDialog, Ui_Dialog):

@@ -1,5 +1,5 @@
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import QIcon
+from PyQt6 import QtCore, QtWidgets
+from PyQt6.QtGui import QIcon
 from UCustomMessageBox import CustomMessageBox
 from UMovEstoqueDialog import MovEstoqueDialog
 from datetime import datetime
@@ -17,15 +17,15 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.gridLayout = QtWidgets.QGridLayout(self.subEst)
         self.gridLayout.setObjectName("gridLayout")
         self.fraMovEst = QtWidgets.QFrame(self.subEst)
-        self.fraMovEst.setFrameShape(QtWidgets.QFrame.Panel)
-        self.fraMovEst.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.fraMovEst.setFrameShape(QtWidgets.QFrame.Shape.Panel)
+        self.fraMovEst.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.fraMovEst.setObjectName("fraMovEst")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.fraMovEst)
         self.verticalLayout_3.setContentsMargins(4, 4, 4, 4)
         self.verticalLayout_3.setSpacing(4)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.lblMovEst = QtWidgets.QLabel(self.fraMovEst)
-        self.lblMovEst.setAlignment(QtCore.Qt.AlignCenter)
+        self.lblMovEst.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lblMovEst.setObjectName("lblMovEst")
         self.verticalLayout_3.addWidget(self.lblMovEst)
         self.gridMovEst = QtWidgets.QTableWidget(self.fraMovEst)
@@ -62,14 +62,14 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.fraEst = QtWidgets.QFrame(self.subEst)
         self.fraEst.setMinimumSize(QtCore.QSize(315, 0))
         self.fraEst.setMaximumSize(QtCore.QSize(315, 16777215))
-        self.fraEst.setFrameShape(QtWidgets.QFrame.Panel)
-        self.fraEst.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.fraEst.setFrameShape(QtWidgets.QFrame.Shape.Panel)
+        self.fraEst.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.fraEst.setObjectName("fraEst")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.fraEst)
         self.verticalLayout_6.setContentsMargins(4, 4, 4, 4)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.lblEst = QtWidgets.QLabel(self.fraEst)
-        self.lblEst.setAlignment(QtCore.Qt.AlignCenter)
+        self.lblEst.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lblEst.setObjectName("lblEst")
         self.verticalLayout_6.addWidget(self.lblEst)
         self.gridEst = QtWidgets.QTableWidget(self.fraEst)
@@ -90,7 +90,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.gridLayout.addWidget(self.fraEst, 0, 1, 1, 1)
         self.fraBotoesEst = QtWidgets.QFrame(self.subEst)
         self.fraBotoesEst.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.fraBotoesEst.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.fraBotoesEst.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.fraBotoesEst.setObjectName("fraBotoesEst")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.fraBotoesEst)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -122,7 +122,7 @@ class SubWindowEstoque(QtWidgets.QWidget):
         self.btnExcluirEst.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirEst.setObjectName("btnExcluirEst")
         self.horizontalLayout_2.addWidget(self.btnExcluirEst)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem2)
         self.btnFecharEst = QtWidgets.QPushButton(self.fraBotoesEst)
         self.btnFecharEst.setMinimumSize(QtCore.QSize(48, 48))

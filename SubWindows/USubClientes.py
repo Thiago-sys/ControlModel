@@ -1,5 +1,5 @@
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import QIcon
+from PyQt6 import QtCore, QtWidgets
+from PyQt6.QtGui import QIcon
 from UCadClienteDialog import CadClienteDialog
 from UCustomMessageBox import CustomMessageBox
 
@@ -36,7 +36,7 @@ class SubWindowClientes(QtWidgets.QWidget):
         self.verticalLayout_7.addWidget(self.gridClientes)
         self.fraBotoesClientes = QtWidgets.QFrame(self.subClientes)
         self.fraBotoesClientes.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.fraBotoesClientes.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.fraBotoesClientes.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.fraBotoesClientes.setObjectName("fraBotoesClientes")
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.fraBotoesClientes)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
@@ -68,7 +68,7 @@ class SubWindowClientes(QtWidgets.QWidget):
         self.btnExcluirClientes.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirClientes.setObjectName("btnExcluirClientes")
         self.horizontalLayout_7.addWidget(self.btnExcluirClientes)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_7.addItem(spacerItem5)
         self.btnFecharClientes = QtWidgets.QPushButton(self.fraBotoesClientes)
         self.btnFecharClientes.setMinimumSize(QtCore.QSize(48, 48))

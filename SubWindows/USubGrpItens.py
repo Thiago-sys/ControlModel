@@ -1,5 +1,5 @@
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import QIcon
+from PyQt6 import QtCore, QtWidgets
+from PyQt6.QtGui import QIcon
 from UCadGruposDialog import CadGruposDialog
 from UCustomMessageBox import CustomMessageBox
 
@@ -30,7 +30,7 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
         self.verticalLayout_5.addWidget(self.gridGrupoItens)
         self.fraBotoesGrupo = QtWidgets.QFrame(self.subGrupo)
         self.fraBotoesGrupo.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.fraBotoesGrupo.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.fraBotoesGrupo.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.fraBotoesGrupo.setObjectName("fraBotoesGrupo")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.fraBotoesGrupo)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
@@ -62,7 +62,7 @@ class SubWindowGrupoItens(QtWidgets.QWidget):
         self.btnExcluirGrupo.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirGrupo.setObjectName("btnExcluirGrupo")
         self.horizontalLayout_5.addWidget(self.btnExcluirGrupo)
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem4)
         self.btnFecharGrupo = QtWidgets.QPushButton(self.fraBotoesGrupo)
         self.btnFecharGrupo.setMinimumSize(QtCore.QSize(48, 48))

@@ -1,5 +1,5 @@
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import QIcon
+from PyQt6 import QtCore, QtWidgets
+from PyQt6.QtGui import QIcon
 from UCustomMessageBox import CustomMessageBox
 from UCadFornecedorDialog import CadFornecedorDialog
 
@@ -38,7 +38,7 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         self.verticalLayout_8.addWidget(self.gridFornecedores)
         self.fraBotoesFornecedores = QtWidgets.QFrame(self.subFornecedores)
         self.fraBotoesFornecedores.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.fraBotoesFornecedores.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.fraBotoesFornecedores.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.fraBotoesFornecedores.setObjectName("fraBotoesFornecedores")
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.fraBotoesFornecedores)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
@@ -70,7 +70,7 @@ class SubWindowFornecedores(QtWidgets.QWidget):
         self.btnExcluirFornecedores.setIconSize(QtCore.QSize(36, 36))
         self.btnExcluirFornecedores.setObjectName("btnExcluirFornecedores")
         self.horizontalLayout_8.addWidget(self.btnExcluirFornecedores)
-        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_8.addItem(spacerItem6)
         self.btnFecharFornecedores = QtWidgets.QPushButton(self.fraBotoesFornecedores)
         self.btnFecharFornecedores.setMinimumSize(QtCore.QSize(48, 48))
